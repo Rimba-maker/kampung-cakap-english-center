@@ -8,7 +8,7 @@ import ProgramOverview from "../components/home/ProgramOverview";
 import EnglishAreaPreview from "../components/home/EnglishAreaPreview";
 import PricingPreview from "../components/home/PricingPreview";
 import AlumniPreview from "../components/home/AlumniPreview";
-import { waLink, pexelsPhoto, PHOTOS } from "../lib/site";
+import { waLink, pexelsPhoto, PHOTOS, withBase } from "../lib/site";
 ---
 
 <Layout
@@ -44,7 +44,7 @@ import { waLink, pexelsPhoto, PHOTOS } from "../lib/site";
           Lokasi kami dekat destinasi favorit Jawa Timur: Bromo, Ijen, Batu Malang, jadi agenda weekend yang gampang di sela belajar.
         </p>
         <a
-          href="/lokasi-wisata/"
+          href={withBase("/lokasi-wisata/")}
           class="mt-7 inline-block rounded-full border-2 border-primary-900 px-6 py-3 text-sm font-bold text-primary-900 transition-colors hover:bg-primary-900 hover:text-white"
         >
           Lihat Info Lokasi & Wisata

@@ -4,6 +4,7 @@ import { Leaf } from "@phosphor-icons/react/dist/csr/Leaf";
 import { Target } from "@phosphor-icons/react/dist/csr/Target";
 import { ChalkboardTeacher } from "@phosphor-icons/react/dist/csr/ChalkboardTeacher";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
+import { withBase } from "../../lib/site";
 
 const programs = [
   { icon: Plant, title: "Confidence", subtitle: "Dari Nol", anchor: "#confidence" },
@@ -24,7 +25,7 @@ export default function ProgramOverview() {
           {programs.map(({ icon: Icon, title, subtitle, anchor }, i) => (
             <motion.a
               key={title}
-              href={`/program/${anchor}`}
+              href={withBase(`/program/${anchor}`)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}

@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
-import { pexelsPhoto, PHOTOS } from "../../lib/site";
+import { pexelsPhoto, PHOTOS, withBase } from "../../lib/site";
 
 export default function EnglishAreaPreview() {
   return (
@@ -45,7 +45,7 @@ export default function EnglishAreaPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            href="/asrama-english-area/"
+            href={withBase("/asrama-english-area/")}
             className="group mt-7 inline-flex items-center gap-3 rounded-full bg-primary-900 py-3 pl-6 pr-2 text-sm font-bold text-white transition-transform active:scale-[0.98]"
           >
             Pelajari Sistem Asrama Lengkap

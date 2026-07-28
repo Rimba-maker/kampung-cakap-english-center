@@ -1,3 +1,13 @@
+/** Setiap link/asset internal WAJIB lewat sini. Astro isi import.meta.env.BASE_URL beda
+ * di tiap konteks: "/" pas `astro dev`/build lokal, "/kampung-cakap-english-center/" pas
+ * build di GitHub Actions (lihat astro.config.mjs) — jadi satu path yang sama otomatis benar
+ * di localhost maupun di GitHub Pages, nggak perlu di-hardcode dua kali. */
+export function withBase(path: string): string {
+  const base = import.meta.env.BASE_URL;
+  const trimmedBase = base.endsWith("/") ? base.slice(0, -1) : base;
+  return `${trimmedBase}${path}`;
+}
+
 export const WHATSAPP_NUMBER = "6281234567890"; // TODO: ganti nomor asli
 
 export function waLink(message: string) {

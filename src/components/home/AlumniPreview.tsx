@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ALUMNI } from "../alumni/alumniData";
-import { pexelsPhoto } from "../../lib/site";
+import { pexelsPhoto, withBase } from "../../lib/site";
 import Carousel from "../shared/Carousel";
 
 const testimonials = ALUMNI.slice(0, 3);
@@ -13,7 +13,7 @@ export default function AlumniPreview() {
           <h2 className="max-w-lg text-3xl font-extrabold tracking-tight text-primary-900 md:text-4xl">
             Cerita Mereka yang Sudah "Cakap".
           </h2>
-          <a href="/alumni/" className="text-sm font-bold text-cta hover:underline">
+          <a href={withBase("/alumni/")} className="text-sm font-bold text-cta hover:underline">
             Lihat Semua Cerita Alumni
           </a>
         </div>

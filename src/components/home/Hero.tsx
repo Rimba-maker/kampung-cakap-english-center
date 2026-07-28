@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
-import { pexelsPhoto, PHOTOS } from "../../lib/site";
+import { pexelsPhoto, PHOTOS, withBase } from "../../lib/site";
 
 const reveal = {
   hidden: { opacity: 0, y: 20 },
@@ -49,7 +49,7 @@ export default function Hero() {
             className="mt-8 flex flex-wrap items-center gap-4"
           >
             <a
-              href="/pendaftaran/"
+              href={withBase("/pendaftaran/")}
               className="group inline-flex items-center gap-3 rounded-full bg-cta py-3 pl-6 pr-2 text-sm font-bold text-white transition-transform active:scale-[0.98]"
             >
               Daftar Sekarang
@@ -58,7 +58,7 @@ export default function Hero() {
               </span>
             </a>
             <a
-              href="/harga/"
+              href={withBase("/harga/")}
               className="rounded-full px-6 py-3 text-sm font-bold text-primary-900 underline decoration-2 underline-offset-4 transition-colors hover:text-primary-600"
             >
               Lihat Program & Harga

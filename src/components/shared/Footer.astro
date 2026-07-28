@@ -5,14 +5,14 @@ import { YoutubeLogo } from "@phosphor-icons/react/dist/csr/YoutubeLogo";
 import { WhatsappLogo } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
 import { EnvelopeSimple } from "@phosphor-icons/react/dist/csr/EnvelopeSimple";
 import { MapPin } from "@phosphor-icons/react/dist/csr/MapPin";
-import { NAV_LINKS, waLink } from "../../lib/site";
+import { NAV_LINKS, waLink, withBase } from "../../lib/site";
 ---
 
 <footer class="relative overflow-hidden border-t border-white/10 bg-primary-950 text-white">
   <div class="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
     <div class="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
       <div>
-        <a href="/" class="flex items-center gap-2 text-xl font-extrabold">
+        <a href={withBase("/")} class="flex items-center gap-2 text-xl font-extrabold">
           <span class="blob-2 flex h-9 w-9 items-center justify-center bg-accent-yellow text-sm font-extrabold text-primary-900">
             KC
           </span>
@@ -40,7 +40,7 @@ import { NAV_LINKS, waLink } from "../../lib/site";
           {
             NAV_LINKS.map((link) => (
               <li>
-                <a href={link.href} class="text-sm text-white/80 hover:text-white">
+                <a href={withBase(link.href)} class="text-sm text-white/80 hover:text-white">
                   {link.label}
                 </a>
               </li>

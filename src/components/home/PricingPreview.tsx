@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import Carousel from "../shared/Carousel";
+import { withBase } from "../../lib/site";
 
 const packages = [
   {
@@ -63,7 +64,7 @@ export default function PricingPreview() {
                 {pkg.price}
               </p>
               <a
-                href="/harga/"
+                href={withBase("/harga/")}
                 className={`mt-8 block rounded-full py-3 text-center text-sm font-bold transition-transform active:scale-[0.98] ${
                   pkg.popular ? "bg-white text-primary-900" : "bg-primary-50 text-primary-900"
                 }`}
