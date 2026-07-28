@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/shared/PageHero.astro";
+import BlobDivider from "../components/shared/BlobDivider.astro";
+import RevealGrid from "../components/shared/RevealGrid";
+import { PHOTOS } from "../lib/site";
+
+const fasilitas = [
+  { icon: "Buildings", title: "Asrama & Kos English Area", body: "Tempat tinggal dengan aturan wajib berbahasa Inggris 24 jam.", photo: PHOTOS.dormitory },
+  { icon: "BookOpen", title: "Ruang Kelas Nyaman", body: "Ruang belajar santai, cocok buat diskusi dan praktik speaking.", photo: PHOTOS.ruangKelas },
+  { icon: "ForkKnife", title: "Kantin & Dapur Umum", body: "Tempat makan bareng sekaligus praktik ngobrol bahasa Inggris.", photo: PHOTOS.kantin },
+  { icon: "WifiHigh", title: "WiFi di Area Belajar", body: "Sinyal kenceng buat cari referensi materi atau video call keluarga di rumah." },
+  { icon: "WashingMachine", title: "Laundry", body: "Tinggal add-on kalau nggak sempat nyuci sendiri." },
+  { icon: "Popcorn", title: "Kegiatan Ekstra", body: "Movie night bahasa Inggris, English club, dan aktivitas seru lain.", photo: PHOTOS.kegiatanEkstra },
+] as const;
+---
+
+<Layout
+  title="Fasilitas Pendukung Belajar - Kampung Cakap"
+  description="Fasilitas pendukung belajar bahasa Inggris immersive di Kampung Cakap English Center: asrama, ruang kelas, kantin, hingga kegiatan ekstra."
+>
+  <PageHero
+    title="Fasilitas Pendukung Belajar."
+    subtitle="Semua kebutuhan tinggal dan belajar udah ada, jadi fokus kamu cuma satu: ngomong Inggris tiap hari."
+  />
+  <BlobDivider class="text-white -mt-1" />
+
+  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
+    <RevealGrid client:visible items={fasilitas} columns="grid-cols-2 lg:grid-cols-3" blob="blob-1" />
+  </section>
+</Layout>

@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlobDivider from "../components/shared/BlobDivider.astro";
+import Hero from "../components/home/Hero";
+import TrustBar from "../components/home/TrustBar";
+import WhyUs from "../components/home/WhyUs";
+import ProgramOverview from "../components/home/ProgramOverview";
+import EnglishAreaPreview from "../components/home/EnglishAreaPreview";
+import PricingPreview from "../components/home/PricingPreview";
+import AlumniPreview from "../components/home/AlumniPreview";
+import { waLink, pexelsPhoto, PHOTOS } from "../lib/site";
+---
+
+<Layout
+  title="Kampung Cakap English Center - Kursus Bahasa Inggris Immersive"
+  description="Kursus bahasa Inggris dengan sistem asrama wajib berbahasa Inggris 24 jam. Program dari nol sampai TOEFL, dekat wisata Bromo & Batu Malang."
+>
+  <Hero client:load />
+  <BlobDivider class="text-white -mt-1" />
+
+  <TrustBar client:load />
+
+  <WhyUs client:visible />
+  <BlobDivider class="text-primary-50/60 -mt-1" />
+
+  <ProgramOverview client:visible />
+  <BlobDivider class="text-white -mt-1" flip />
+
+  <EnglishAreaPreview client:visible />
+
+  <PricingPreview client:visible />
+
+  <AlumniPreview client:visible />
+  <BlobDivider class="text-white -mt-1" />
+
+  <!-- Lokasi & Wisata Teaser -->
+  <section class="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div>
+        <h2 class="text-3xl font-extrabold tracking-tight text-primary-900 md:text-4xl">
+          Belajar di Sini, Sekalian Healing.
+        </h2>
+        <p class="mt-5 text-base leading-relaxed text-ink/70 md:text-lg">
+          Lokasi kami dekat destinasi favorit Jawa Timur: Bromo, Ijen, Batu Malang, jadi agenda weekend yang gampang di sela belajar.
+        </p>
+        <a
+          href="/lokasi-wisata/"
+          class="mt-7 inline-block rounded-full border-2 border-primary-900 px-6 py-3 text-sm font-bold text-primary-900 transition-colors hover:bg-primary-900 hover:text-white"
+        >
+          Lihat Info Lokasi & Wisata
+        </a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4">
+        <img
+          src={pexelsPhoto(PHOTOS.bromoHome, 500)}
+          alt="Sunrise Gunung Bromo"
+          class="h-full w-full rounded-2xl object-cover shadow-lg"
+        />
+        <img
+          src={pexelsPhoto(PHOTOS.ijenHome, 500)}
+          alt="Kawah Ijen"
+          class="mt-8 h-full w-full rounded-2xl object-cover shadow-lg"
+        />
+        <img
+          src={pexelsPhoto(PHOTOS.batuMalangHome, 500)}
+          alt="Wisata Batu Malang"
+          class="mt-4 h-full w-full rounded-2xl object-cover shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="relative overflow-hidden bg-primary-900 py-20 text-center text-white md:py-28">
+    <div class="blob-2 pointer-events-none absolute -left-20 -top-20 h-64 w-64 bg-accent-yellow/20 blur-2xl"></div>
+    <div class="blob-3 pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 bg-primary-400/30 blur-2xl"></div>
+
+    <div class="relative mx-auto max-w-2xl px-4">
+      <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+        Yuk, Mulai Perjalanan Cakap Bahasa Inggrismu.
+      </h2>
+      <p class="mt-4 text-white/70">Batch berikutnya buka tanggal 10 dan 25 tiap bulan. Amankan slotmu sekarang.</p>
+      <a
+        href={waLink("Halo, saya mau daftar Kampung Cakap English Center")}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-block rounded-full bg-cta px-8 py-4 text-sm font-bold text-white transition-transform active:scale-[0.98]"
+      >
+        Daftar Sekarang
+      </a>
+    </div>
+  </section>
+</Layout>

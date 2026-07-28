@@ -1,0 +1,26 @@
+---
+interface Props {
+  /** warna fill divider, pakai kelas Tailwind text-color (dipakai via currentColor) */
+  class?: string;
+  /** balik posisi (dipakai kalau divider ada di atas section, bukan di bawah) */
+  flip?: boolean;
+}
+
+const { class: className = "text-white", flip = false } = Astro.props;
+---
+
+<div
+  class:list={["pointer-events-none w-full leading-[0]", className, flip && "rotate-180"]}
+  aria-hidden="true"
+>
+  <svg
+    class="h-8 w-full md:h-14"
+    viewBox="0 0 1440 120"
+    preserveAspectRatio="none"
+    fill="currentColor"
+  >
+    <path
+      d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,58.7C672,43,768,21,864,26.7C960,32,1056,64,1152,74.7C1248,85,1344,75,1392,69.3L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
+    ></path>
+  </svg>
+</div>

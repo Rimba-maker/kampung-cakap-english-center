@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/shared/PageHero.astro";
+import BlobDivider from "../components/shared/BlobDivider.astro";
+import ContactForm from "../components/kontak/ContactForm";
+import { WhatsappLogo } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
+import { EnvelopeSimple } from "@phosphor-icons/react/dist/csr/EnvelopeSimple";
+import { MapPin } from "@phosphor-icons/react/dist/csr/MapPin";
+---
+
+<Layout
+  title="Hubungi Kampung Cakap English Center"
+  description="Konsultasi gratis untuk memulai program bahasa Inggris immersive kamu."
+>
+  <PageHero
+    title="Yuk, Mulai Perjalanan Cakap Bahasa Inggrismu."
+    subtitle="Isi form di bawah, tim kami balas cepat lewat WhatsApp buat bantu kamu pilih program yang pas."
+  />
+  <BlobDivider class="text-white -mt-1" />
+
+  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
+    <div class="grid gap-10 md:grid-cols-[1fr_1.2fr]">
+      <div>
+        <h2 class="text-xl font-extrabold text-primary-900">Info Kontak</h2>
+        <ul class="mt-5 grid gap-4 text-sm text-ink/70">
+          <li class="flex items-start gap-3">
+            <WhatsappLogo size={20} className="mt-0.5 shrink-0 text-primary-600" />
+            +62 812-3456-7890
+          </li>
+          <li class="flex items-start gap-3">
+            <EnvelopeSimple size={20} className="mt-0.5 shrink-0 text-primary-600" />
+            halo@kampungcakap.id
+          </li>
+          <li class="flex items-start gap-3">
+            <MapPin size={20} className="mt-0.5 shrink-0 text-primary-600" />
+            Pare, Kediri, Jawa Timur
+          </li>
+        </ul>
+
+        <div class="mt-6 aspect-square w-full overflow-hidden rounded-3xl border border-primary-100">
+          <iframe
+            title="Lokasi Kampung Cakap English Center"
+            src="https://www.google.com/maps?q=Pare,Kediri,Jawa+Timur&output=embed"
+            class="h-full w-full"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <ContactForm client:idle />
+    </div>
+  </section>
+</Layout>

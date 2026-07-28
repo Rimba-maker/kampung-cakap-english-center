@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/shared/PageHero.astro";
+import BlobDivider from "../components/shared/BlobDivider.astro";
+import { SunHorizon } from "@phosphor-icons/react/dist/csr/SunHorizon";
+import { Fire } from "@phosphor-icons/react/dist/csr/Fire";
+import { Ticket } from "@phosphor-icons/react/dist/csr/Ticket";
+import { Tree } from "@phosphor-icons/react/dist/csr/Tree";
+import { pexelsPhoto, PHOTOS, waLink } from "../lib/site";
+
+const destinasi = [
+  { icon: SunHorizon, title: "Gunung Bromo", body: "Sunrise trip akhir pekan.", photo: PHOTOS.bromoPage },
+  { icon: Fire, title: "Kawah Ijen", body: "Blue fire dan sunrise trek.", photo: PHOTOS.ijenPage },
+  { icon: Ticket, title: "Batu Malang & Jatim Park", body: "Wisata keluarga dan hiburan.", photo: PHOTOS.batuMalangPage },
+  { icon: Tree, title: "Wisata Alam Sekitar Kediri", body: "Pilihan healing yang lebih dekat.", photo: PHOTOS.wisataKediri },
+];
+---
+
+<Layout
+  title="Lokasi & Wisata Sekitar - Kampung Cakap"
+  description="Belajar bahasa Inggris sambil healing ke Bromo, Kawah Ijen, dan Batu Malang di akhir pekan."
+>
+  <PageHero
+    title="Belajar Serius, Weekend Healing."
+    subtitle="Salah satu alasan banyak yang datang dari luar kota, lokasi kami dekat dengan beberapa destinasi wisata terbaik Jawa Timur."
+  />
+  <BlobDivider class="text-white -mt-1" />
+
+  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
+    <div class="grid grid-cols-2 gap-3 sm:gap-6">
+      {
+        destinasi.map(({ icon: IconEl, title, body, photo }) => (
+          <div class="overflow-hidden rounded-3xl border border-primary-100 bg-white">
+            <img src={pexelsPhoto(photo, 700)} alt={title} class="h-24 w-full object-cover sm:h-48" />
+            <div class="p-3 sm:p-6">
+              <span class="grid h-8 w-8 place-items-center rounded-full bg-primary-50 text-primary-600 sm:h-10 sm:w-10">
+                <IconEl size={18} weight="bold" />
+              </span>
+              <h3 class="mt-2 text-sm font-bold text-primary-900 sm:mt-3 sm:text-lg">{title}</h3>
+              <p class="mt-1 text-xs text-ink/65 sm:text-sm">{body}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="mt-8 text-sm italic leading-relaxed text-ink/50">
+      Catatan: kegiatan wisata bersifat opsional di luar jadwal wajib program dan English Area, bukan bagian dari kurikulum resmi.
+    </p>
+  </section>
+
+  <section class="bg-primary-50/60 py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 md:px-8">
+      <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">Lokasi Kami</h2>
+      <div class="mt-6 aspect-video w-full overflow-hidden rounded-3xl border border-primary-100">
+        <iframe
+          title="Lokasi Kampung Cakap English Center"
+          src="https://www.google.com/maps?q=Pare,Kediri,Jawa+Timur&output=embed"
+          class="h-full w-full"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center md:px-8 md:py-20">
+    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">
+      Udah Kebayang Belajar Sambil Healing?
+    </h2>
+    <a
+      href={waLink("Halo, saya mau daftar Kampung Cakap English Center")}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-6 inline-block rounded-full bg-cta px-7 py-3.5 text-sm font-bold text-white transition-transform active:scale-[0.98]"
+    >
+      Daftar Sekarang
+    </a>
+  </section>
+</Layout>

@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/shared/PageHero.astro";
+import BlobDivider from "../components/shared/BlobDivider.astro";
+import ProgramGrid from "../components/program/ProgramGrid";
+import { waLink, pexelsPhoto, PHOTOS } from "../lib/site";
+
+const thematicClasses = [
+  "Speaking Intensive",
+  "Grammar",
+  "Thematic Vocabulary",
+  "Listening",
+  "Reading",
+  "Writing",
+  "Pronunciation Clinic",
+];
+---
+
+<Layout
+  title="Program Kursus Bahasa Inggris - Kampung Cakap"
+  description="Program Confidence, Active, Fluent & TOEFL Prep, hingga Micro Teaching. Jenjang belajar bahasa Inggris yang jelas dan terstruktur."
+>
+  <PageHero
+    title="Jenjang Belajar Yang Jelas, Dari Nol Sampai Mahir."
+    subtitle="Setiap jenjang dirancang membangun kemampuan secara bertahap, kamu tidak akan dilempar ke kelas yang terlalu sulit atau terlalu mudah."
+  />
+  <BlobDivider class="text-white -mt-1" />
+
+  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
+    <ProgramGrid client:visible />
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-16 md:px-8 md:pb-20">
+    <div class="relative overflow-hidden rounded-3xl">
+      <img
+        src={pexelsPhoto(PHOTOS.examPrepBanner, 1400)}
+        alt="Kelas persiapan TOEFL di Kampung Cakap"
+        class="h-64 w-full object-cover md:h-80"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-900/70 via-primary-900/10 to-transparent"></div>
+      <p class="absolute bottom-6 left-6 max-w-sm text-lg font-bold text-white md:text-xl">
+        Fokus ke yang benar-benar dibutuhkan buat kuliah, kerja, dan ngobrol sehari-hari.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-primary-50/60 py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 md:px-8">
+      <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">
+        Kelas Tematik Tambahan
+      </h2>
+      <p class="mt-2 text-sm text-ink/60">Bisa diambil terpisah atau sebagai pelengkap program utama.</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        {
+          thematicClasses.map((cls) => (
+            <span class="rounded-full border border-primary-200 bg-white px-4 py-2 text-sm font-semibold text-primary-900">
+              {cls}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center md:px-8 md:py-20">
+    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">
+      Masih Bingung Pilih Jenjang yang Mana?
+    </h2>
+    <a
+      href={waLink("Halo, saya mau konsultasi pilih program yang tepat di Kampung Cakap")}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-6 inline-block rounded-full bg-cta px-7 py-3.5 text-sm font-bold text-white transition-transform active:scale-[0.98]"
+    >
+      Konsultasi Pilih Program yang Tepat
+    </a>
+  </section>
+</Layout>

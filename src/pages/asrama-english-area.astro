@@ -1,0 +1,103 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/shared/PageHero.astro";
+import BlobDivider from "../components/shared/BlobDivider.astro";
+import RevealGrid from "../components/shared/RevealGrid";
+import { waLink, pexelsPhoto, PHOTOS } from "../lib/site";
+
+const caraKerja = [
+  { icon: "Buildings", title: "Seluruh Area Wajib Bahasa Inggris", body: "Dengan teman sekamar, tutor, bahkan obrolan santai di ruang makan." },
+  { icon: "UsersThree", title: "Tutor Tinggal Bareng Kamu", body: "Tinggal di asrama yang sama, mengoreksi speaking dan jadi partner ngobrol kapan saja." },
+  { icon: "ChatsCircle", title: "Ada Area Bebas Bahasa", body: "Beberapa area tertentu (jika ada) ditetapkan sebagai zona istirahat total dari aturan wajib." },
+] as const;
+
+const aturanAsrama = [
+  { icon: "GenderNeuter", title: "Asrama Terpisah", body: "Asrama putra dan putri terpisah total." },
+  { icon: "UsersThree", title: "Isi Kamar", body: "4-5 orang untuk asrama, 2-3 orang untuk kos (lebih privat)." },
+  { icon: "MoonStars", title: "Jam Malam", body: "Sekitar pukul 21.00-22.00 WIB." },
+  { icon: "Prohibit", title: "Dilarang Merokok", body: "Berlaku di seluruh area asrama." },
+  { icon: "Broom", title: "Piket Kebersihan", body: "Dijadwalkan bergiliran tiap penghuni." },
+  { icon: "UserCircle", title: "Tamu Dibatasi", body: "Tamu dari luar hanya boleh berkunjung sampai batas waktu tertentu." },
+] as const;
+---
+
+<Layout
+  title="Sistem Asrama English Area 24 Jam - Kampung Cakap"
+  description="Asrama dengan aturan wajib berbahasa Inggris 24 jam, didampingi tutor tinggal bersama. Cara efektif belajar cepat."
+>
+  <PageHero
+    title="English Area, Zona Wajib Bahasa Inggris 24 Jam."
+    subtitle="Ini yang membedakan kami dari kursus biasa. Bukan cuma belajar di kelas, tapi hidup dalam bahasa Inggris setiap hari."
+  />
+  <BlobDivider class="text-white -mt-1" />
+
+  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
+    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">Cara Kerja English Area</h2>
+    <div class="mt-8">
+      <RevealGrid client:visible items={caraKerja} columns="md:grid-cols-3" blob="blob-1" />
+    </div>
+  </section>
+
+  <section class="bg-primary-50/60 py-16 md:py-20">
+    <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 md:grid-cols-2 md:px-8">
+      <div class="relative mx-auto aspect-square w-full max-w-xs">
+        <div class="absolute -inset-3 -z-10 rounded-[2rem] bg-primary-400/25"></div>
+        <img
+          src={pexelsPhoto(PHOTOS.tutorMentoring, 700)}
+          alt="Tutor mendampingi siswa ngobrol santai di asrama"
+          class="h-full w-full rounded-3xl object-cover shadow-xl"
+        />
+      </div>
+
+      <div class="rounded-3xl border-2 border-accent-yellow-dark/40 bg-white p-7 md:p-8">
+        <p class="text-xs font-bold uppercase tracking-wide text-cta">Sistem "Hukuman" Seru</p>
+        <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-primary-900">Ketahuan Ngomong Bahasa Indonesia?</h2>
+        <p class="mt-4 text-sm leading-relaxed text-ink/70">
+          Konsekuensinya bervariasi: hafalan vocabulary tambahan, atau speech singkat di depan penghuni asrama lain. Tujuannya bukan menghukum, tapi memacu supaya kamu terus terpapar bahasa Inggris. Justru ini yang paling sering diceritain alumni sebagai bagian paling seru.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
+    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">Aturan Asrama</h2>
+    <div class="mt-8">
+      <RevealGrid client:visible items={aturanAsrama} columns="grid-cols-2 lg:grid-cols-3" blob="blob-3" />
+    </div>
+
+    <div class="mt-10 rounded-2xl bg-primary-50 p-6">
+      <p class="text-sm font-bold text-primary-900">Fasilitas Kamar</p>
+      <p class="mt-1.5 text-sm leading-relaxed text-ink/70">
+        Kasur, lemari, kipas angin/AC (tergantung tipe kamar), akses dapur umum, opsional laundry.
+      </p>
+    </div>
+
+    <div class="relative mt-6 overflow-hidden rounded-3xl">
+      <img
+        src={pexelsPhoto(PHOTOS.asramaHangout, 1400)}
+        alt="Penghuni asrama santai bareng di luar jam belajar"
+        class="h-56 w-full object-cover md:h-72"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-900/70 via-primary-900/10 to-transparent"></div>
+      <p class="absolute bottom-6 left-6 max-w-sm text-lg font-bold text-white md:text-xl">
+        Di luar jam belajar, tetap seru bareng teman satu asrama.
+      </p>
+    </div>
+
+    <p class="mt-6 text-sm italic leading-relaxed text-ink/50">
+      Catatan: tinggal di asrama sangat direkomendasikan untuk hasil maksimal, namun bagi yang memilih kos di luar, tetap wajib mengikuti jadwal program secara penuh.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center md:px-8 md:py-20">
+    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">Masih Ada Pertanyaan Soal Asrama?</h2>
+    <a
+      href={waLink("Halo, saya mau tanya detail asrama Kampung Cakap")}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-6 inline-block rounded-full bg-cta px-7 py-3.5 text-sm font-bold text-white transition-transform active:scale-[0.98]"
+    >
+      Tanya Detail Asrama via WhatsApp
+    </a>
+  </section>
+</Layout>

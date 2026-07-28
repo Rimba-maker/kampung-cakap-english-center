@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/shared/PageHero.astro";
+import BlobDivider from "../components/shared/BlobDivider.astro";
+import AlumniSection from "../components/alumni/AlumniSection";
+---
+
+<Layout
+  title="Alumni & Testimoni - Kampung Cakap"
+  description="Cerita nyata alumni yang sudah lancar berbahasa Inggris bersama Kampung Cakap English Center."
+>
+  <PageHero title={`Cerita Mereka yang Sudah "Cakap".`} />
+  <BlobDivider class="text-white -mt-1" />
+
+  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
+    <AlumniSection client:visible />
+  </section>
+</Layout>
