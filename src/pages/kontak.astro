@@ -1,54 +1,62 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PageHero from "../components/shared/PageHero.astro";
-import BlobDivider from "../components/shared/BlobDivider.astro";
 import ContactForm from "../components/kontak/ContactForm";
-import { WhatsappLogo } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
-import { EnvelopeSimple } from "@phosphor-icons/react/dist/csr/EnvelopeSimple";
-import { MapPin } from "@phosphor-icons/react/dist/csr/MapPin";
+import { photo } from "../lib/photos";
+import { waLink, WHATSAPP_NUMBER } from "../lib/site";
 ---
 
-<Layout
-  title="Hubungi Kampung Cakap English Center"
-  description="Konsultasi gratis untuk memulai program bahasa Inggris immersive kamu."
->
-  <PageHero
-    title="Yuk, Mulai Perjalanan Cakap Bahasa Inggrismu."
-    subtitle="Isi form di bawah, tim kami balas cepat lewat WhatsApp buat bantu kamu pilih program yang pas."
-  />
-  <BlobDivider class="text-white -mt-1" />
+<Layout title="Hubungi Kampung Cakap English Center" description="Konsultasi gratis untuk memulai program bahasa Inggris immersive kamu.">
+  <header class="section contact-header"><div class="container contact-heading"><h1>Yuk, Mulai Perjalanan Cakap Bahasa Inggrismu.</h1><div><p>Belum yakin harus mulai dari mana? Ceritakan tujuan dan waktumu. Form ini membantu menyiapkan pesan konsultasi lewat WhatsApp.</p><img class="photo" src={photo("conversation")} alt="Ilustrasi percakapan santai bersama teman dari Pexels" width="1200" height="800" fetchpriority="high" /><p class="photo-note">Foto ilustrasi Pexels, bukan peserta Kampung Cakap.</p></div></div></header>
 
-  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
-    <div class="grid gap-10 md:grid-cols-[1fr_1.2fr]">
-      <div>
-        <h2 class="text-xl font-extrabold text-primary-900">Info Kontak</h2>
-        <ul class="mt-5 grid gap-4 text-sm text-ink/70">
-          <li class="flex items-start gap-3">
-            <WhatsappLogo size={20} className="mt-0.5 shrink-0 text-primary-600" />
-            +62 812-3456-7890
-          </li>
-          <li class="flex items-start gap-3">
-            <EnvelopeSimple size={20} className="mt-0.5 shrink-0 text-primary-600" />
-            halo@kampungcakap.id
-          </li>
-          <li class="flex items-start gap-3">
-            <MapPin size={20} className="mt-0.5 shrink-0 text-primary-600" />
-            Pare, Kediri, Jawa Timur
-          </li>
-        </ul>
-
-        <div class="mt-6 aspect-square w-full overflow-hidden rounded-3xl border border-primary-100">
-          <iframe
-            title="Lokasi Kampung Cakap English Center"
-            src="https://www.google.com/maps?q=Pare,Kediri,Jawa+Timur&output=embed"
-            class="h-full w-full"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
-
-      <ContactForm client:idle />
+  <section class="section section-soft contact-content">
+    <div class="container consultation-layout">
+      <div class="form-panel"><ContactForm client:load /><noscript><div class="notice"><p>Aktifkan JavaScript untuk menyiapkan pesan dengan form, atau buka percakapan langsung. Nomor tujuan masih demonstrasi.</p><a class="text-link" href={waLink("Halo, saya mau konsultasi program Kampung Cakap.")} target="_blank" rel="noopener noreferrer">Buka konsultasi WhatsApp</a></div></noscript></div>
+      <aside class="contact-details" aria-label="Informasi kontak dan lokasi">
+        <h2 class="section-heading">Sebelum kita ngobrol.</h2>
+        <p>Kamu bisa menanyakan level awal, pilihan durasi, biaya kursus dan asrama, serta jadwal intake.</p>
+        <dl><div><dt>WhatsApp demonstrasi</dt><dd><a class="text-link" href={waLink("Halo, saya mau tanya-tanya soal Kampung Cakap")} target="_blank" rel="noopener noreferrer">+{WHATSAPP_NUMBER}</a><p>Belum merupakan nomor resmi terverifikasi. Jangan gunakan untuk pembayaran.</p></dd></div><div><dt>Konteks lokasi</dt><dd>Pare, Kediri, Jawa Timur.<p>Alamat lengkap dan pin lembaga belum dikonfirmasi. Peta di bawah hanya menunjukkan area umum.</p></dd></div><div><dt>Kontak resmi lainnya</dt><dd>Email dan kanal sosial belum dikonfirmasi; tidak ditampilkan sebagai kontak aktif.</dd></div></dl>
+        <figure class="contact-photo"><img class="photo" src={photo("tutor")} alt="Ilustrasi dua perempuan bekerja dengan bahan pembelajaran di ruang kelas" width="1200" height="800" loading="lazy" /><figcaption>Foto ilustrasi Pexels, bukan staf Kampung Cakap.</figcaption></figure>
+        <div class="contact-map"><iframe title="Peta umum Pare, Kediri; bukan alamat lembaga terverifikasi" src="https://www.google.com/maps?q=Pare,Kediri,Jawa+Timur&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div><a class="text-link map-link" href="https://www.google.com/maps/search/?api=1&query=Pare%2C%20Kediri%2C%20Jawa%20Timur" target="_blank" rel="noopener noreferrer">Buka peta area Pare</a>
+      </aside>
     </div>
   </section>
 </Layout>
+
+<style>
+  .contact-heading { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: start; }
+  h1 { font-size: clamp(2.6rem, 5.2vw, 4.5rem); line-height: 1.12; letter-spacing: -.04em; max-width: 14ch; color: #172b3a; }
+  .contact-heading > div > p:first-child { font-size: 1.12rem; line-height: 1.7; }
+  .contact-heading img { margin-top: 26px; aspect-ratio: 2 / 1; }
+  .photo-note, figcaption { font-size: .8rem; color: #5a6b77; margin-top: 12px; }
+  .consultation-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: start; }
+  .form-panel { background: white; padding: 36px; border-radius: 16px; min-width: 0; }
+  .contact-content :global(.consultation-form) { display: grid; gap: 24px; }
+  .contact-content :global(.form-intro h2) { font-size: 1.65rem; letter-spacing: -.025em; line-height: 1.3; }
+  .contact-content :global(.form-intro p) { font-size: .9rem; margin-top: 12px; color: #465966; }
+  .contact-content :global(.form-field) { display: grid; gap: 8px; min-width: 0; align-content: start; }
+  .contact-content :global(label) { font-size: .88rem; font-weight: 700; color: #172b3a; }
+  .contact-content :global(label span) { font-weight: 400; color: #5a6b77; }
+  .contact-content :global(input), .contact-content :global(select) { width: 100%; min-width: 0; min-height: 50px; border: 1px solid #bbcbd6; border-radius: 10px; padding: 12px 14px; background: white; color: #172b3a; font: inherit; font-size: .95rem; caret-color: #07557c; }
+  .contact-content :global(select) { padding-right: 28px; }
+  .contact-content :global(input::placeholder) { color: #5a6b77; opacity: 1; }
+  .contact-content :global(input[aria-invalid="true"]) { border-color: #a52b18; }
+  .contact-content :global(.field-error) { color: #a52b18; font-size: .85rem; }
+  .contact-content :global(.field-hint) { font-size: .8rem; color: #5a6b77; line-height: 1.65; }
+  .contact-content :global(.form-row) { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; }
+  .contact-content :global(.form-disclosure) { font-size: .82rem; color: #465966; padding-top: 22px; border-top: 1px solid #dce5eb; }
+  .contact-content :global(.consultation-form > button) { width: 100%; white-space: normal; text-align: center; }
+  .contact-content :global(.form-feedback p) { margin-bottom: 12px; }
+  .contact-content :global(.form-feedback) { font-size: .9rem; }
+  .contact-details > p { margin: 20px 0; }
+  .contact-details dl > div { padding: 22px 0; border-top: 1px solid #dce5eb; }
+  dt { font-weight: 700; color: #172b3a; }
+  dd { margin: 8px 0 0; color: #465966; }
+  dd p { font-size: .85rem; margin-top: 8px; }
+  .contact-photo { margin: 16px 0 28px; }
+  .contact-photo img { aspect-ratio: 3 / 2; }
+  .contact-map { border-radius: 16px; overflow: hidden; }
+  iframe { display: block; width: 100%; height: 300px; border: 0; }
+  .map-link { display: inline-block; margin-top: 16px; }
+  @media (max-width: 1000px) { .consultation-layout { gap: 32px; } .form-panel { padding: 26px; } .contact-content :global(.form-row) { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) { .contact-heading, .consultation-layout { grid-template-columns: 1fr; gap: 32px; } h1 { max-width: 18ch; } .form-panel { padding: 24px 20px; } .contact-content :global(.consultation-form) { gap: 22px; } .contact-details { padding-top: 12px; } }
+</style>
