@@ -1,7 +1,5 @@
-import { useState } from "react";
-import { motion } from "motion/react";
-import { CaretDown } from "@phosphor-icons/react/dist/csr/CaretDown";
 
+import { CaretDown } from "@phosphor-icons/react/dist/csr/CaretDown";
 const faqs = [
   {
     q: "Apakah wajib tinggal di asrama?",
@@ -34,41 +32,17 @@ const faqs = [
 ];
 
 export default function FaqAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   return (
-    <div className="divide-y divide-primary-100 rounded-3xl border border-primary-100 bg-white">
-      {faqs.map((item, i) => {
-        const isOpen = openIndex === i;
-        return (
-          <div key={item.q}>
-            <button
-              type="button"
-              onClick={() => setOpenIndex(isOpen ? null : i)}
-              aria-expanded={isOpen}
-              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
-            >
-              <span className="text-sm font-bold text-primary-900 md:text-base">{item.q}</span>
-              <motion.span
-                animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="shrink-0 text-primary-600"
-              >
-                <CaretDown size={18} weight="bold" />
-              </motion.span>
-            </button>
-            <div
-              className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-              }`}
-            >
-              <div className="overflow-hidden">
-                <p className="px-6 pb-5 text-sm leading-relaxed text-ink/65">{item.a}</p>
-              </div>
-            </div>
-          </div>
-        );
-      })}
+    <div className="faq-accordion">
+      {faqs.map((item, index) => (
+        <details key={item.q} className="faq-item" open={index === 0}>
+          <summary>
+            <span>{item.q}</span>
+            <CaretDown size={20} aria-hidden="true" />
+          </summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
     </div>
   );
 }
