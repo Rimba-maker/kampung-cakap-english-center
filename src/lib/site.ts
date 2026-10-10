@@ -8,50 +8,12 @@ export function withBase(path: string): string {
   return `${trimmedBase}${path}`;
 }
 
-export const WHATSAPP_NUMBER = "6281234567890"; // TODO: ganti nomor asli
+// Demonstration contact. Official number has not been supplied; disclosed in the UI.
+export const WHATSAPP_NUMBER = "6281234567890";
 
 export function waLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
-
-/** Foto asli dari Pexels (bebas pakai, no attribution required). ID dicek manual sesuai tema tiap section. */
-export function pexelsPhoto(id: number, width = 1200) {
-  return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${width}`;
-}
-
-export const PHOTOS = {
-  heroStudyOutdoor: 6147210,
-  examPrepBanner: 6147267,
-  dormitory: 5137980,
-  tutorMentoring: 6503101,
-  bromoHome: 28910380,
-  bromoPage: 31893249,
-  ijenHome: 6420914,
-  ijenPage: 33502669,
-  batuMalangHome: 3148865,
-  batuMalangPage: 37151021,
-  wisataKediri: 13860042,
-  ruangKelas: 5212331,
-  kantin: 8617514,
-  kegiatanEkstra: 9807275,
-  teamTutor: 5212363,
-  asramaHangout: 9287491,
-  programConfidence: 5428003,
-  programActive: 5940831,
-  programFluentToefl: 5427998,
-  programMicroTeaching: 8348624,
-} as const;
-
-export const ALUMNI_PHOTOS = {
-  ranggaPratama: 17503453,
-  salsabilaPutri: 24205642,
-  farelArdiansyah: 36291553,
-  dianAyuLestari: 1564123,
-  bagasWirawan: 4558592,
-  nadiaKusuma: 7216901,
-  yusufMaulana: 6102858,
-  intanPermata: 7514875,
-} as const;
 
 /** navLabel dipakai di navbar (harus muat satu baris), label penuh dipakai di footer/tempat lain */
 export const NAV_LINKS = [
