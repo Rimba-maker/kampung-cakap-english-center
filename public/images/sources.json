@@ -1,0 +1,750 @@
+{
+  "provider": "Pexels",
+  "license": "https://www.pexels.com/license/",
+  "illustrativeNotice": "All images are illustrative stock photography, not evidence of institution facilities or model identities. Destination locations are recorded only where source metadata verifies them.",
+  "sources": {
+    "hero": {
+      "id": 7972311,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/a-group-of-students-studying-7972311/",
+      "downloadUrl": "https://images.pexels.com/photos/7972311/pexels-photo-7972311.jpeg?auto=compress&cs=tinysrgb&w=1800&q=75&fm=webp",
+      "subject": "Students collaborate on a project outside a university building, engaged with their devices and materials.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/hero.webp",
+      "dimensions": {
+        "width": 1800,
+        "height": 1200
+      },
+      "format": "webp",
+      "bytes": 188282,
+      "sha256": "7ed2aebd5bf9011b9820b5665337d162758574aa71a2a99216b5c8527eada1d8",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "study-outdoor": {
+      "id": 7972315,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/a-group-of-students-studying-7972315/",
+      "downloadUrl": "https://images.pexels.com/photos/7972315/pexels-photo-7972315.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A group of students working on a project outdoors, showcasing teamwork in a university setting.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/study-outdoor.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 99958,
+      "sha256": "026cd9c109c7ebb1cf249944106d89f2e921e99ef744116b4cff49621c4dee06",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "conversation": {
+      "id": 7972332,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/group-of-students-sitting-on-a-wooden-bench-7972332/",
+      "downloadUrl": "https://images.pexels.com/photos/7972332/pexels-photo-7972332.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Three students sitting at an outdoor table on a university campus, captured in a candid moment.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/conversation.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 164452,
+      "sha256": "ab038da89583ca0300a87d54196be49104a3fff1e4ba11dd8a69cc2d7b436552",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "mentoring": {
+      "id": 7972316,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/two-women-studying-7972316/",
+      "downloadUrl": "https://images.pexels.com/photos/7972316/pexels-photo-7972316.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Two young women studying together outside a university, using a laptop and stationery.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/mentoring.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 52532,
+      "sha256": "ae2dcff59da5ed6b3ce7e1a9eddfc4ea801170dc6e72d108109fe9f281739ab2",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "classroom": {
+      "id": 5940831,
+      "photographer": "Kampus Production",
+      "photoPage": "https://www.pexels.com/photo/young-student-making-presentation-to-classmates-and-teacher-5940831/",
+      "downloadUrl": "https://images.pexels.com/photos/5940831/pexels-photo-5940831.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Students and teacher engaged in an active discussion inside a bright university library.",
+      "sourceDimensions": {
+        "width": 3977,
+        "height": 2651
+      },
+      "asset": "/images/classroom.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 64962,
+      "sha256": "f2fe9a713756d0f3fa495a7cbc1207c005993fbdf927dd7a063554ea40826a70",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "speaking": {
+      "id": 7972951,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/smiling-women-and-man-by-table-7972951/",
+      "downloadUrl": "https://images.pexels.com/photos/7972951/pexels-photo-7972951.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Three young adults discussing and writing together outside on a sunny day.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/speaking.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 83242,
+      "sha256": "0e315c55de5082d6b250414d1b398f04f23b84a48228d80b06cd81dad7c31824",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "toefl": {
+      "id": 7972310,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/a-man-in-plaid-long-sleeves-reading-papers-7972310/",
+      "downloadUrl": "https://images.pexels.com/photos/7972310/pexels-photo-7972310.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A college student reviews papers outside on campus with classmates, engaging in collaborative study.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/toefl.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 64516,
+      "sha256": "f8531925fdb61a329206644b07ad4a2da3675a76b71314fd6afc7055705ba270",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "books": {
+      "id": 159711,
+      "photographer": "Pixabay",
+      "photoPage": "https://www.pexels.com/photo/books-in-black-wooden-book-shelf-159711/",
+      "downloadUrl": "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Vibrant collection of books on shelves for reading, research, and education.",
+      "sourceDimensions": {
+        "width": 5715,
+        "height": 3800
+      },
+      "asset": "/images/books.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 851
+      },
+      "format": "webp",
+      "bytes": 179702,
+      "sha256": "30880d5a0304fcd99318b809121dca4462efd69405d78800948b34fc70fe2535",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "library": {
+      "id": 590493,
+      "photographer": "Janko Ferlic",
+      "photoPage": "https://www.pexels.com/photo/light-inside-library-590493/",
+      "downloadUrl": "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Rows of bookshelves in a cozy library with warm ambient lighting. Perfect for learning and knowledge themes.",
+      "sourceDimensions": {
+        "width": 5013,
+        "height": 4634
+      },
+      "asset": "/images/library.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1183
+      },
+      "format": "webp",
+      "bytes": 68132,
+      "sha256": "32aaa71930d0a77f13f0c360d0e59d1d5f6f2c2eb4e9534c5f248b2f4e258c98",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "notebook": {
+      "id": 5124877,
+      "photographer": "cottonbro studio",
+      "photoPage": "https://www.pexels.com/photo/notebooks-on-a-desk-5124877/",
+      "downloadUrl": "https://images.pexels.com/photos/5124877/pexels-photo-5124877.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Top-down view of a desk with a weekly planner, notebook, and pen promoting organization.",
+      "sourceDimensions": {
+        "width": 3500,
+        "height": 2333
+      },
+      "asset": "/images/notebook.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 54760,
+      "sha256": "0f942bb3e01490221e3491372ff1643474e54be3113726bfd0589af858082b4d",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "friends": {
+      "id": 7972661,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/photo-of-a-group-of-students-walking-together-7972661/",
+      "downloadUrl": "https://images.pexels.com/photos/7972661/pexels-photo-7972661.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Smiling group of students walking outdoors on a sunny college campus.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/friends.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 151990,
+      "sha256": "5b24d25d90f6fcd6a410bee154545ccb32ea597a7364f2248201cb2c2ed37194",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "campus": {
+      "id": 7972512,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/back-view-of-students-walking-in-a-campus-7972512/",
+      "downloadUrl": "https://images.pexels.com/photos/7972512/pexels-photo-7972512.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Three students walk through an archway towards a historic university building on campus.",
+      "sourceDimensions": {
+        "width": 4000,
+        "height": 6000
+      },
+      "asset": "/images/campus.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      },
+      "format": "webp",
+      "bytes": 351462,
+      "sha256": "ae5d70a9dfdde005be407592ab58cc789fc4997e1a8a195cbccf6e5cd82da0ad",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "dorm-room": {
+      "id": 5137980,
+      "photographer": "cottonbro studio",
+      "photoPage": "https://www.pexels.com/photo/a-room-in-a-hostel-5137980/",
+      "downloadUrl": "https://images.pexels.com/photos/5137980/pexels-photo-5137980.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Comfortable hostel dorm room with clean bunk beds and a cozy ambiance.",
+      "sourceDimensions": {
+        "width": 6240,
+        "height": 4160
+      },
+      "asset": "/images/dorm-room.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 115802,
+      "sha256": "b313f9b08c504e7badca1f2a330775bcc188a932d37c91f9bd73583326b18288",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "dorm-common": {
+      "id": 5158948,
+      "photographer": "cottonbro studio",
+      "photoPage": "https://www.pexels.com/photo/friends-gathered-on-a-room-5158948/",
+      "downloadUrl": "https://images.pexels.com/photos/5158948/pexels-photo-5158948.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A group of diverse, cheerful backpackers socializing in a cozy dorm room, creating a lively atmosphere.",
+      "sourceDimensions": {
+        "width": 4051,
+        "height": 6076
+      },
+      "asset": "/images/dorm-common.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      },
+      "format": "webp",
+      "bytes": 177894,
+      "sha256": "ada9d1ca7f9fb9b59a9f6bfaabf508c0125b1194fc44a28d6e1906bee065134a",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "dorm-study": {
+      "id": 4907197,
+      "photographer": "Ketut Subiyanto",
+      "photoPage": "https://www.pexels.com/photo/women-talking-in-room-4907197/",
+      "downloadUrl": "https://images.pexels.com/photos/4907197/pexels-photo-4907197.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Two women engaging in conversation on bunk beds in a modern dormitory room.",
+      "sourceDimensions": {
+        "width": 5821,
+        "height": 3881
+      },
+      "asset": "/images/dorm-study.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 53868,
+      "sha256": "a2e836f6f520d994aab4e3489ec09efb45fdd937f38fcb09b7d9226bbfd0a09a",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni.",
+      "usageNote": "Conversation beside bunk beds; illustrates residential peer interaction, not a dedicated study-room facility."
+    },
+    "dining": {
+      "id": 4349791,
+      "photographer": "Ketut Subiyanto",
+      "photoPage": "https://www.pexels.com/photo/delighted-friends-having-lunch-in-cafe-4349791/",
+      "downloadUrl": "https://images.pexels.com/photos/4349791/pexels-photo-4349791.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Group of friends laughing and eating together in a cozy café with friendly service.",
+      "sourceDimensions": {
+        "width": 5821,
+        "height": 3387
+      },
+      "asset": "/images/dining.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 745
+      },
+      "format": "webp",
+      "bytes": 65758,
+      "sha256": "57564f9bb712e9e1a3739e26c23e0966b069946d9f5ed449db23cfe198593d5f",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "kitchen": {
+      "id": 1080721,
+      "photographer": "Mark McCammon",
+      "photoPage": "https://www.pexels.com/photo/kitchen-and-dining-area-1080721/",
+      "downloadUrl": "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Spacious modern kitchen with white cabinets and island in natural light.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/kitchen.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 72042,
+      "sha256": "331095fd0f814025519594a4559682dad3db3d6665096bd38ee7c759b0c2cc29",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "laundry": {
+      "id": 5591581,
+      "photographer": "RDNE Stock project",
+      "photoPage": "https://www.pexels.com/photo/a-person-pouring-detergent-in-a-washing-machine-5591581/",
+      "downloadUrl": "https://images.pexels.com/photos/5591581/pexels-photo-5591581.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Close-up of a person pouring detergent into a front-loading washer, emphasizing household chores.",
+      "sourceDimensions": {
+        "width": 5472,
+        "height": 3648
+      },
+      "asset": "/images/laundry.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 41056,
+      "sha256": "3aadcf46d8e06f4e40ac4f9a67ca10e33145cb8498fa56acaf361d4199b05d0d",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "movie-night": {
+      "id": 7991579,
+      "photographer": "Tima Miroshnichenko",
+      "photoPage": "https://www.pexels.com/photo/cartoon-movie-showing-on-theater-screen-7991579/",
+      "downloadUrl": "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A cozy indoor movie theater showing an animated film to a small audience.",
+      "sourceDimensions": {
+        "width": 5982,
+        "height": 3988
+      },
+      "asset": "/images/movie-night.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 77820,
+      "sha256": "51068a88dadb3d6a564d950ac5b4557338df48af2af03e6e4f1f3b479ed53460",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "teacher-team": {
+      "id": 7972313,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/a-group-of-students-studying-7972313/",
+      "downloadUrl": "https://images.pexels.com/photos/7972313/pexels-photo-7972313.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Group of university students collaborating and studying together in an outdoor setting.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/teacher-team.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 91136,
+      "sha256": "52dc9b6c56e6b291c49c4549900043c0666e41922f82a5b2986991387ccc111e",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni.",
+      "usageNote": "Models are students in an illustrative collaborative scene, not verified Kampung Cakap teachers."
+    },
+    "tutor": {
+      "id": 6503101,
+      "photographer": "Thirdman",
+      "photoPage": "https://www.pexels.com/photo/a-teacher-tutoring-her-student-6503101/",
+      "downloadUrl": "https://images.pexels.com/photos/6503101/pexels-photo-6503101.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Two women working together on educational materials in a classroom setting.",
+      "sourceDimensions": {
+        "width": 6398,
+        "height": 4265
+      },
+      "asset": "/images/tutor.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 55782,
+      "sha256": "35912af3c26eb41954b52ba811543b619a44bf20d24955c40e6670fccc4b48a7",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "portrait-1": {
+      "id": 17503453,
+      "photographer": "Bùi Hoàng Long",
+      "photoPage": "https://www.pexels.com/photo/face-of-smiling-man-17503453/",
+      "downloadUrl": "https://images.pexels.com/photos/17503453/pexels-photo-17503453.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A young Asian man with black hair smiles warmly during an outdoor portrait session.",
+      "sourceDimensions": {
+        "width": 3648,
+        "height": 5472
+      },
+      "asset": "/images/portrait-1.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      },
+      "format": "webp",
+      "bytes": 87954,
+      "sha256": "0b7c17800c72e4c84551e3705a072667e8f8cf249dcdaed5e3274dfdd6087d90",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "portrait-2": {
+      "id": 24205642,
+      "photographer": "Thể Phạm",
+      "photoPage": "https://www.pexels.com/photo/standing-woman-in-pink-blouse-and-black-pants-24205642/",
+      "downloadUrl": "https://images.pexels.com/photos/24205642/pexels-photo-24205642.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Asian woman smiling confidently in a pink blouse, posing outdoors. Fashion portrait.",
+      "sourceDimensions": {
+        "width": 3744,
+        "height": 5616
+      },
+      "asset": "/images/portrait-2.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      },
+      "format": "webp",
+      "bytes": 84746,
+      "sha256": "358f4437ab4f09b4a01f84d3e44bb064272217a67663008150bd7bd313f489a5",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "portrait-3": {
+      "id": 4558592,
+      "photographer": "Risz Amin",
+      "photoPage": "https://www.pexels.com/photo/smiling-ethnic-guy-in-spectacles-on-street-4558592/",
+      "downloadUrl": "https://images.pexels.com/photos/4558592/pexels-photo-4558592.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A confident man smiling while adjusting his glasses under urban night lights.",
+      "sourceDimensions": {
+        "width": 2771,
+        "height": 3464
+      },
+      "asset": "/images/portrait-3.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1600
+      },
+      "format": "webp",
+      "bytes": 67904,
+      "sha256": "1fcc8108d99b0e4b1313278d438ca5df51fad02d0804d6054403583dfefeca38",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "portrait-4": {
+      "id": 7216901,
+      "photographer": "Anna Tarazevich",
+      "photoPage": "https://www.pexels.com/photo/a-woman-in-white-long-sleeve-dress-7216901/",
+      "downloadUrl": "https://images.pexels.com/photos/7216901/pexels-photo-7216901.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Portrait of a smiling young Asian woman with a vibrant yellow background.",
+      "sourceDimensions": {
+        "width": 3500,
+        "height": 2333
+      },
+      "asset": "/images/portrait-4.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 49056,
+      "sha256": "ca2b0f6ca43a7ade0b71b35404b6e4e307af3723fc287db931d4a65aec9a4d34",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "bromo": {
+      "id": 6863992,
+      "photographer": "Lorencius Stefanus",
+      "photoPage": "https://www.pexels.com/photo/the-picturesque-mt-bromo-in-east-java-indonesia-6863992/",
+      "downloadUrl": "https://images.pexels.com/photos/6863992/pexels-photo-6863992.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Stunning landscape of Mount Bromo, a famous volcano in East Java, Indonesia, surrounded by mist and rolling hills.",
+      "sourceDimensions": {
+        "width": 4007,
+        "height": 2671
+      },
+      "asset": "/images/bromo.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 79416,
+      "sha256": "f3078c4454fa47783f06120ed33b9fe01998cffd979c86ee30403878e3c52eae",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni.",
+      "verifiedLocation": "East Java, Indonesia"
+    },
+    "ijen": {
+      "id": 34391007,
+      "photographer": "Lim Jia Le",
+      "photoPage": "https://www.pexels.com/photo/stunning-view-of-kawah-ijen-crater-lake-34391007/",
+      "downloadUrl": "https://images.pexels.com/photos/34391007/pexels-photo-34391007.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A breathtaking aerial view of Kawah Ijen crater lake with turquoise water and volcanic steam formations.",
+      "sourceDimensions": {
+        "width": 4000,
+        "height": 2250
+      },
+      "asset": "/images/ijen.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      },
+      "format": "webp",
+      "bytes": 75194,
+      "sha256": "a95bbb4b3b55af13d9c63a98181de2dddadb7aa0eefa04f37b8c3c4df1b92020",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni.",
+      "verifiedLocation": "Banyuwangi, Indonesia"
+    },
+    "batu": {
+      "id": 13860042,
+      "photographer": "lukas arianto",
+      "photoPage": "https://www.pexels.com/photo/lawn-on-a-field-among-fog-13860042/",
+      "downloadUrl": "https://images.pexels.com/photos/13860042/pexels-photo-13860042.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Scenic view of lush green farmland with hills and fog in Malang, East Java, Indonesia.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 3376
+      },
+      "asset": "/images/batu.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      },
+      "format": "webp",
+      "bytes": 105136,
+      "sha256": "b2c20acbb125a82dab01c6bf95895bb00b0ee38e750ce83cf0829cff116a4959",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni.",
+      "verifiedLocation": "Malang, East Java, Indonesia",
+      "usageNote": "Malang farmland and misty hills; not verified as Batu city or a specific attraction."
+    },
+    "kediri": {
+      "id": 13971071,
+      "photographer": "Aqil Faisal Halfid",
+      "photoPage": "https://www.pexels.com/photo/laptop-on-desk-with-japanese-style-paintings-on-wall-13971071/",
+      "downloadUrl": "https://images.pexels.com/photos/13971071/pexels-photo-13971071.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Aesthetic desk setup featuring laptop and Japanese paintings under soft lamp light.",
+      "sourceDimensions": {
+        "width": 3929,
+        "height": 4911
+      },
+      "asset": "/images/kediri.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1600
+      },
+      "format": "webp",
+      "bytes": 71402,
+      "sha256": "91fdfd749f3c2eb5555afead88caa7f18cd1111458e047778dbea4a34967204b",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni.",
+      "verifiedLocation": "Pare, Kediri, East Java, Indonesia",
+      "usageNote": "A workspace explicitly location-tagged Pare, Kediri on the photo page; not a photograph of Kelud or Simpang Lima Gumul."
+    },
+    "arrival": {
+      "id": 7972481,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/students-with-backpacks-walking-city-street-7972481/",
+      "downloadUrl": "https://images.pexels.com/photos/7972481/pexels-photo-7972481.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Two students walking on a university campus with papers in springtime.",
+      "sourceDimensions": {
+        "width": 4000,
+        "height": 6000
+      },
+      "asset": "/images/arrival.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      },
+      "format": "webp",
+      "bytes": 367932,
+      "sha256": "a7a6ad8962c6c391ede09549859a7f740de705e1afc654b7a78e0b67b4f4cdff",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "graduation": {
+      "id": 7972710,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/happy-students-celebrating-graduation-holding-diplomas-7972710/",
+      "downloadUrl": "https://images.pexels.com/photos/7972710/pexels-photo-7972710.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "Group of diverse students celebrating graduation with diplomas outdoors.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/graduation.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 119228,
+      "sha256": "b722f12a69127e4e511eb9b0a2b49eae52cc1adc63a1412b8778107399721be7",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "materials": {
+      "id": 5124871,
+      "photographer": "cottonbro studio",
+      "photoPage": "https://www.pexels.com/photo/flat-lay-of-books-and-notebooks-on-brown-background-5124871/",
+      "downloadUrl": "https://images.pexels.com/photos/5124871/pexels-photo-5124871.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A neatly arranged flat lay of textbooks, notebooks, and stationary items on a brown background.",
+      "sourceDimensions": {
+        "width": 3500,
+        "height": 2333
+      },
+      "asset": "/images/materials.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 50488,
+      "sha256": "33d34afea536fabc3a95b0a64b9678fa591784ce698dbb27a2ea7ffbf765b66f",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "discussion": {
+      "id": 7972948,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/three-young-people-studying-together-outdoors-with-laptops-7972948/",
+      "downloadUrl": "https://images.pexels.com/photos/7972948/pexels-photo-7972948.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A group of students studying and using laptops together outside in a college campus setting.",
+      "sourceDimensions": {
+        "width": 6000,
+        "height": 4000
+      },
+      "asset": "/images/discussion.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 95136,
+      "sha256": "da80414652c386fa643c9f426e93412c67572be93f55f513029a23b1945ffba2",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "reading": {
+      "id": 7973040,
+      "photographer": "George Pak",
+      "photoPage": "https://www.pexels.com/photo/university-students-sitting-on-steps-and-studying-7973040/",
+      "downloadUrl": "https://images.pexels.com/photos/7973040/pexels-photo-7973040.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A diverse group of university students studying on outdoor steps, discussing assignments.",
+      "sourceDimensions": {
+        "width": 4000,
+        "height": 6000
+      },
+      "asset": "/images/reading.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      },
+      "format": "webp",
+      "bytes": 258932,
+      "sha256": "fff31194415a6772922c5218a8f04da69d8161c28b229b063ea991b6a7e59b2b",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    },
+    "workshop": {
+      "id": 8348624,
+      "photographer": "Henri Mathieu-Saint-Laurent",
+      "photoPage": "https://www.pexels.com/photo/man-in-gray-sweater-talking-to-audience-8348624/",
+      "downloadUrl": "https://images.pexels.com/photos/8348624/pexels-photo-8348624.jpeg?auto=compress&cs=tinysrgb&w=1280&q=75&fm=webp",
+      "subject": "A confident young man speaking at a conference, engaging with an audience in an indoor setting.",
+      "sourceDimensions": {
+        "width": 5260,
+        "height": 3507
+      },
+      "asset": "/images/workshop.webp",
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "format": "webp",
+      "bytes": 85366,
+      "sha256": "5da3408b51621433724ddf160030250ea3062f489b9ce6e50ec5b646d22bfd91",
+      "illustrative": true,
+      "status": "Pexels stock photograph; not documentation of Kampung Cakap facilities, staff, students, or alumni."
+    }
+  }
+}
