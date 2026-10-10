@@ -1,94 +1,263 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import BlobDivider from "../components/shared/BlobDivider.astro";
 import Hero from "../components/home/Hero";
-import TrustBar from "../components/home/TrustBar";
-import WhyUs from "../components/home/WhyUs";
-import ProgramOverview from "../components/home/ProgramOverview";
-import EnglishAreaPreview from "../components/home/EnglishAreaPreview";
-import PricingPreview from "../components/home/PricingPreview";
-import AlumniPreview from "../components/home/AlumniPreview";
-import { waLink, pexelsPhoto, PHOTOS, withBase } from "../lib/site";
+import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
+import { ChatCircleText } from "@phosphor-icons/react/dist/csr/ChatCircleText";
+import { UsersThree } from "@phosphor-icons/react/dist/csr/UsersThree";
+import { BookOpen } from "@phosphor-icons/react/dist/csr/BookOpen";
+import { CalendarBlank } from "@phosphor-icons/react/dist/csr/CalendarBlank";
+import { waLink, withBase } from "../lib/site";
+import { photo } from "../lib/photos";
+const programs = [
+  { title: "Confidence", note: "Mulai dari nol", duration: "2–4 minggu", body: "Bangun dasar dan berani mengucapkan kalimat pertamamu.", image: "reading" as const, anchor: "confidence" },
+  { title: "Active", note: "Sudah punya dasar", duration: "4–8 minggu", body: "Jadikan percakapan sehari-hari lebih natural dan percaya diri.", image: "discussion" as const, anchor: "active" },
+  { title: "Fluent & TOEFL", note: "Siap melangkah lebih jauh", duration: "4–8 minggu", body: "Speaking untuk konteks formal dan persiapan TOEFL ITP.", image: "toefl" as const, anchor: "fluent-toefl" },
+  { title: "Micro Teaching", note: "Dari belajar ke mengajar", duration: "2–4 minggu", body: "Pelajari teknik mengajar, public speaking, dan lesson planning.", image: "workshop" as const, anchor: "micro-teaching" },
+];
+const packages = [
+  { duration: "2 Minggu", purpose: "Coba dulu", price: "850.000", description: "Untuk liburan singkat dan langkah pertama belajar intensif.", selected: false },
+  { duration: "1 Bulan", purpose: "Program reguler", price: "1.500.000", description: "Beri dirimu waktu untuk membangun kebiasaan speaking.", selected: true },
+  { duration: "6 Bulan", purpose: "Perjalanan lebih lengkap", price: "6.500.000", description: "Belajar bertahap, dari dasar sampai Fluent atau persiapan TOEFL.", selected: false },
+];
 ---
-
-<Layout
-  title="Kampung Cakap English Center - Kursus Bahasa Inggris Immersive"
-  description="Kursus bahasa Inggris dengan sistem asrama wajib berbahasa Inggris 24 jam. Program dari nol sampai TOEFL, dekat wisata Bromo & Batu Malang."
->
+<Layout title="Kampung Cakap English Center - Kursus Bahasa Inggris Immersive" description="Kursus bahasa Inggris immersive dengan English Area 24 jam, tutor tinggal bersama, dan program dari nol sampai TOEFL di Pare, Kediri.">
   <Hero client:load />
-  <BlobDivider class="text-white -mt-1" />
 
-  <TrustBar client:load />
+  <div class="container home-trust" aria-label="Inti program Kampung Cakap">
+    <div><ChatCircleText size={23} /><span>English Area <strong>24 jam</strong></span></div>
+    <div><UsersThree size={23} /><span>Tutor <strong>tinggal bersama</strong></span></div>
+    <div><BookOpen size={23} /><span>Program <strong>dari nol</strong></span></div>
+    <div><CalendarBlank size={23} /><span>Intake <strong>10 & 25</strong></span></div>
+  </div>
 
-  <WhyUs client:visible />
-  <BlobDivider class="text-primary-50/60 -mt-1" />
-
-  <ProgramOverview client:visible />
-  <BlobDivider class="text-white -mt-1" flip />
-
-  <EnglishAreaPreview client:visible />
-
-  <PricingPreview client:visible />
-
-  <AlumniPreview client:visible />
-  <BlobDivider class="text-white -mt-1" />
-
-  <!-- Lokasi & Wisata Teaser -->
-  <section class="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
-    <div class="grid items-center gap-12 md:grid-cols-2">
-      <div>
-        <h2 class="text-3xl font-extrabold tracking-tight text-primary-900 md:text-4xl">
-          Belajar di Sini, Sekalian Healing.
-        </h2>
-        <p class="mt-5 text-base leading-relaxed text-ink/70 md:text-lg">
-          Lokasi kami dekat destinasi favorit Jawa Timur: Bromo, Ijen, Batu Malang, jadi agenda weekend yang gampang di sela belajar.
-        </p>
-        <a
-          href={withBase("/lokasi-wisata/")}
-          class="mt-7 inline-block rounded-full border-2 border-primary-900 px-6 py-3 text-sm font-bold text-primary-900 transition-colors hover:bg-primary-900 hover:text-white"
-        >
-          Lihat Info Lokasi & Wisata
-        </a>
+  <section class="section container">
+    <div class="home-why">
+      <div class="why-images">
+        <img class="photo" src={photo("classroom")} alt="Ilustrasi suasana kelas dengan pendampingan pengajar" width="1200" height="800" loading="lazy" />
+        <img class="photo" src={photo("study-outdoor")} alt="Ilustrasi teman belajar berdiskusi di luar kelas" width="1200" height="800" loading="lazy" />
       </div>
-
-      <div class="grid grid-cols-3 gap-4">
-        <img
-          src={pexelsPhoto(PHOTOS.bromoHome, 500)}
-          alt="Sunrise Gunung Bromo"
-          class="h-full w-full rounded-2xl object-cover shadow-lg"
-        />
-        <img
-          src={pexelsPhoto(PHOTOS.ijenHome, 500)}
-          alt="Kawah Ijen"
-          class="mt-8 h-full w-full rounded-2xl object-cover shadow-lg"
-        />
-        <img
-          src={pexelsPhoto(PHOTOS.batuMalangHome, 500)}
-          alt="Wisata Batu Malang"
-          class="mt-4 h-full w-full rounded-2xl object-cover shadow-lg"
-        />
+      <div class="why-copy">
+        <h2 class="section-heading">Bukan cuma kelas.<br />Ini lingkungan barumu.</h2>
+        <p class="section-intro">Bahasa lebih mudah jadi kebiasaan ketika kamu memakainya. Di kelas, di asrama, dan di setiap obrolan kecil.</p>
+        <dl class="why-list">
+          <div><dt>Immersion, bukan sekadar materi</dt><dd>Praktik terus di English Area, bukan berhenti setelah kelas selesai.</dd></div>
+          <div><dt>Ada teman dan tutor untuk bercakap</dt><dd>Tutor tinggal bersama dan menjadi partner speaking sehari-hari.</dd></div>
+          <div><dt>Langkah belajar yang jelas</dt><dd>Dari Confidence sampai Fluent, mulai dari level yang sesuai kemampuanmu.</dd></div>
+          <div><dt>Serius belajar, tetap punya cerita</dt><dd>Kenalan dengan teman baru. Jelajahi Jawa Timur di waktu luang akhir pekan.</dd></div>
+        </dl>
+        <a class="text-link" href={withBase("/tentang-kami/")}>Kenalan dengan Kampung Cakap<ArrowRight size={16} /></a>
       </div>
     </div>
   </section>
 
-  <!-- CTA Final -->
-  <section class="relative overflow-hidden bg-primary-900 py-20 text-center text-white md:py-28">
-    <div class="blob-2 pointer-events-none absolute -left-20 -top-20 h-64 w-64 bg-accent-yellow/20 blur-2xl"></div>
-    <div class="blob-3 pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 bg-primary-400/30 blur-2xl"></div>
+  <section class="section section-soft">
+    <div class="container">
+      <h2 class="section-heading">Mulai dari tempatmu sekarang.</h2>
+      <p class="section-intro">Belum berani bicara atau sedang mengejar TOEFL? Ada jenjang untuk langkah berikutnya.</p>
+      <div class="home-programs">
+        {programs.map(program => <a class="program-preview" href={withBase(`/program/#${program.anchor}`)}>
+          <div class="program-photo"><img class="photo" src={photo(program.image)} alt={`Ilustrasi aktivitas belajar untuk program ${program.title}`} width="1200" height="800" loading="lazy" /></div>
+          <div class="program-meta"><span>{program.note}</span><span>{program.duration}</span></div>
+          <h3>{program.title}<ArrowUpRight size={21} /></h3><p>{program.body}</p>
+        </a>)}
+      </div>
+      <p class="media-note">Fotografi merupakan ilustrasi kegiatan belajar, bukan dokumentasi kelas asli.</p>
+      <a class="text-link section-more" href={withBase("/program/")}>Lihat materi dan jenjang lengkap<ArrowRight size={16} /></a>
+    </div>
+  </section>
 
-    <div class="relative mx-auto max-w-2xl px-4">
-      <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
-        Yuk, Mulai Perjalanan Cakap Bahasa Inggrismu.
-      </h2>
-      <p class="mt-4 text-white/70">Batch berikutnya buka tanggal 10 dan 25 tiap bulan. Amankan slotmu sekarang.</p>
-      <a
-        href={waLink("Halo, saya mau daftar Kampung Cakap English Center")}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-8 inline-block rounded-full bg-cta px-8 py-4 text-sm font-bold text-white transition-transform active:scale-[0.98]"
-      >
-        Daftar Sekarang
-      </a>
+  <section class="section container">
+    <div class="home-area">
+      <div class="area-copy">
+        <h2 class="section-heading">English Area.<br />Praktik tidak mengenal bel pulang.</h2>
+        <p class="section-intro">Di asrama, kamu menggunakan bahasa Inggris bersama teman sekamar dan tutor. Bukan harus sempurna. Yang penting, terus mencoba.</p>
+        <p>Aturan 24 jam, pendampingan tutor, dan konsekuensi belajar yang positif membantu menjadikan speaking sebuah kebiasaan.</p>
+        <a class="btn btn-secondary" href={withBase("/asrama-english-area/")}>Kenali kehidupan asrama<ArrowRight size={17} /></a>
+      </div>
+      <div class="area-gallery">
+        <img class="photo area-main" src={photo("dorm-common")} alt="Ilustrasi ruang bersama untuk aktivitas penghuni asrama" width="1200" height="800" loading="lazy" />
+        <img class="photo" src={photo("mentoring")} alt="Ilustrasi pendampingan belajar oleh tutor" width="1200" height="800" loading="lazy" />
+        <img class="photo" src={photo("dorm-study")} alt="Ilustrasi dua perempuan berbincang di kamar dengan ranjang susun" width="1200" height="800" loading="lazy" />
+      </div>
+    </div>
+    <p class="media-note">Foto asrama dan pendampingan adalah ilustrasi. Detail fasilitas tersedia saat konsultasi.</p>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <h2 class="section-heading">Sisihkan waktu.<br />Mulai perjalananmu.</h2>
+      <p class="section-intro">Pilih durasi yang cocok dengan rencana belajarmu. Biaya kursus dan tempat tinggal dijelaskan terpisah.</p>
+      <div class="home-packages">
+        {packages.map(pkg => <article class:list={["package-preview", { "package-selected": pkg.selected }]}>
+          <p class="package-purpose">{pkg.purpose}</p><h3>{pkg.duration}</h3>
+          <p class="package-price"><span>Rp</span> {pkg.price}</p>
+          <p class="package-description">{pkg.description}</p>
+          <a class:list={["btn", pkg.selected ? "btn-primary" : "btn-secondary"]} href={withBase("/harga/")}>Lihat detail paket<ArrowRight size={15} /></a>
+        </article>)}
+      </div>
+      <p class="media-note">Harga merupakan estimasi dalam PRD, belum termasuk asrama. Konfirmasi biaya dan ketersediaan sebelum mendaftar.</p>
+      <a class="text-link section-more" href={withBase("/harga/")}>Bandingkan seluruh pilihan durasi<ArrowRight size={16} /></a>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="home-stories">
+      <img class="photo" src={photo("graduation")} alt="Ilustrasi kebersamaan peserta setelah menyelesaikan kegiatan belajar" width="1200" height="800" loading="lazy" />
+      <div>
+        <h2 class="section-heading">Setiap orang punya langkah pertamanya.</h2>
+        <p class="section-intro">Dari grogi menjadi berani mencoba. Dari belajar sendiri menjadi punya lingkungan untuk praktik.</p>
+        <figure class="home-quote"><blockquote>“Awalnya grogi banget, sekamar sama orang dari daerah lain jadi kepaksa ngomong Inggris.”</blockquote><figcaption>Contoh cerita program Confidence dari PRD, bukan testimoni terverifikasi.</figcaption></figure>
+        <a class="text-link" href={withBase("/alumni/")}>Jelajahi cerita tiap program<ArrowRight size={16} /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <h2 class="section-heading">Belajar serius.<br />Weekend punya cerita.</h2>
+      <p class="section-intro">Di luar jadwal belajar, Jawa Timur punya banyak tempat untuk dijelajahi bersama teman baru.</p>
+      <div class="home-destinations">
+        <a class="destination destination-main" href={withBase("/lokasi-wisata/")}><img class="photo" src={photo("bromo")} alt="Lanskap vulkanik Gunung Bromo di Jawa Timur" width="1200" height="800" loading="lazy" /><h3>Gunung Bromo<ArrowUpRight size={20} /></h3><p>Udara pagi dan pemandangan yang layak ditunggu.</p></a>
+        <div class="destination-pair">
+          <a class="destination" href={withBase("/lokasi-wisata/")}><img class="photo" src={photo("ijen")} alt="Pemandangan Kawah Ijen di Jawa Timur" width="1200" height="800" loading="lazy" /><h3>Kawah Ijen<ArrowUpRight size={20} /></h3></a>
+          <a class="destination" href={withBase("/lokasi-wisata/")}><img class="photo" src={photo("batu")} alt="Lanskap alam kawasan Malang, Jawa Timur" width="1200" height="800" loading="lazy" /><h3>Batu & Malang<ArrowUpRight size={20} /></h3></a>
+        </div>
+      </div>
+      <p class="media-note">Wisata bersifat opsional, di luar jadwal wajib dan tidak otomatis termasuk paket kursus. Perjalanan perlu direncanakan terpisah.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="home-final cta-panel">
+      <div><h2 class="section-heading">Keberanian dimulai<br />dari satu percakapan.</h2><p class="section-intro">Intake reguler tanggal 10 dan 25 setiap bulan. Yuk, cari program yang sesuai dengan tujuanmu.</p><a class="btn btn-primary" href={waLink("Halo, saya ingin konsultasi program dan batch berikutnya di Kampung Cakap")} target="_blank" rel="noopener noreferrer">Konsultasi & daftar<ArrowUpRight size={18} /></a><a class="text-link final-secondary" href={withBase("/pendaftaran/")}>Lihat cara pendaftaran</a></div>
+      <img class="photo" src={photo("arrival")} alt="Ilustrasi anak muda memulai pengalaman belajar bersama" width="1200" height="800" loading="lazy" />
     </div>
   </section>
 </Layout>
+
+<style is:global>
+  .home-hero { padding-top: 44px; }
+  .hero-intro { display: grid; grid-template-columns: 1.12fr 1fr; align-items: center; gap: 76px; margin-bottom: 36px; }
+  .hero-intro h1 { font-size: clamp(3.5rem,5.3vw,5rem); font-weight: 700; line-height: 1.1; letter-spacing: -.04em; }
+  .hero-intro h1 span { color: var(--blue); }
+  .hero-copy p { font-size: 17px; color: var(--body); max-width: 44ch; line-height: 1.8; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .hero-triptych { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; height: clamp(280px,27vw,390px); }
+  .hero-triptych .photo { height: 100%; min-width: 0; }
+  .hero-caption { display: flex; justify-content: space-between; gap: 20px; margin-top: 16px; color: var(--muted); font-size: 12px; }
+  .hero-caption p { color: var(--body); }
+  .hero-caption span { font-size: 11px; }
+  .home-trust { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; padding-block: 30px; margin-top: 26px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .home-trust div { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 13px; color: var(--body); }
+  .home-trust svg { flex-shrink: 0; color: var(--blue); }
+  .home-trust strong { color: var(--ink); font-weight: 600; }
+  .home-why { display: grid; grid-template-columns: .96fr 1fr; gap: 76px; align-items: center; }
+  .why-images { display: grid; grid-template-columns: 1.1fr .8fr; gap: 18px; align-items: end; }
+  .why-images .photo:first-child { height: 520px; }
+  .why-images .photo:last-child { height: 360px; margin-bottom: 42px; }
+  .why-list { margin: 28px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .why-list dt { font-size: 14px; font-weight: 700; line-height: 1.6; }
+  .why-list dd { font-size: 13px; line-height: 1.8; color: var(--body); margin: 8px 0 0; }
+  .text-link svg { display: inline; margin-left: 8px; vertical-align: middle; }
+  .home-programs { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; margin-top: 36px; }
+  .program-preview { display: block; text-decoration: none; }
+  .program-photo { overflow: hidden; border-radius: 16px; }
+  .program-photo .photo { aspect-ratio: 4 / 4.1; height: 100%; transition: transform .35s; }
+  .program-preview:hover .photo { transform: scale(1.035); }
+  .program-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px; font-size: 10px; color: var(--muted); margin-top: 18px; }
+  .program-preview h3 { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 20px; line-height: 1.3; font-weight: 700; margin-top: 10px; letter-spacing: -.025em; }
+  .program-preview h3 svg { flex-shrink: 0; color: var(--blue); }
+  .program-preview > p { font-size: 13px; color: var(--body); line-height: 1.8; margin-top: 12px; }
+  .section-more { display: inline-block; margin-top: 26px; }
+  .home-area { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 72px; }
+  .area-copy > p + p { font-size: 14px; color: var(--body); line-height: 1.8; margin-top: 18px; }
+  .area-copy .btn { margin-top: 28px; }
+  .area-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .area-gallery .area-main { grid-column: 1 / -1; height: 260px; }
+  .area-gallery .photo:not(.area-main) { height: 180px; }
+  .home-packages { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin-top: 36px; }
+  .package-preview { padding: 30px; background: #fff; border-radius: 16px; display: flex; flex-direction: column; }
+  .package-selected { background: var(--sky-surface); }
+  .package-purpose { font-size: 12px; font-weight: 500; color: var(--body); }
+  .package-preview h3 { font-size: 25px; font-weight: 700; margin-top: 6px; }
+  .package-price { font-size: 32px; font-weight: 700; letter-spacing: -.035em; margin-top: 26px; font-variant-numeric: tabular-nums; }
+  .package-price span { font-size: 17px; font-weight: 500; }
+  .package-description { font-size: 13px; color: var(--body); margin-top: 14px; flex: 1; }
+  .package-preview .btn { margin-top: 28px; }
+  .home-stories { display: grid; grid-template-columns: .85fr 1fr; gap: 76px; align-items: center; }
+  .home-stories > .photo { height: 450px; }
+  .home-quote { margin-block: 28px; }
+  .home-quote blockquote { margin: 0; font-size: 23px; font-weight: 500; line-height: 1.65; letter-spacing: -.02em; }
+  .home-quote figcaption { font-size: 11px; color: var(--muted); margin-top: 14px; }
+  .home-destinations { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; margin-top: 36px; }
+  .destination { display: block; text-decoration: none; }
+  .destination h3 { display: flex; align-items: center; justify-content: space-between; font-weight: 700; font-size: 21px; margin-top: 14px; }
+  .destination h3 svg { color: var(--blue); }
+  .destination p { font-size: 13px; color: var(--body); margin-top: 5px; }
+  .destination-main .photo { height: 445px; }
+  .destination-pair { display: grid; gap: 20px; }
+  .destination-pair .photo { height: 183px; }
+  .destination-pair h3 { font-size: 17px; margin-top: 8px; }
+  .home-final { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .home-final > .photo { height: 300px; }
+  .final-secondary { display: block; margin-top: 18px; font-size: 12px; }
+  @media (max-width: 1023px) {
+    .hero-intro { gap: 36px; }
+    .hero-intro h1 { font-size: 3.4rem; }
+    .hero-copy p { font-size: 15px; }
+    .home-why, .home-area, .home-stories { gap: 36px; }
+    .home-programs { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .program-photo .photo { aspect-ratio: 4 / 3; }
+    .why-images .photo:first-child { height: 460px; }
+    .why-images .photo:last-child { height: 310px; }
+    .why-list { grid-template-columns: 1fr; gap: 18px; }
+    .package-preview { padding: 22px; }
+    .package-price { font-size: 27px; }
+    .home-trust { grid-template-columns: repeat(2,1fr); }
+    .home-trust div { justify-content: start; }
+  }
+  @media (max-width: 767px) {
+    .home-hero { padding-top: 28px; }
+    .hero-intro { grid-template-columns: 1fr; gap: 20px; margin-bottom: 28px; }
+    .hero-intro h1 { font-size: clamp(2.9rem,11.6vw,4rem); }
+    .hero-copy p { font-size: 15px; line-height: 1.8; }
+    .hero-actions { gap: 10px; margin-top: 20px; }
+    .hero-actions .btn { font-size: 12px; padding: 13px 17px; }
+    .hero-triptych { grid-template-columns: 1fr 1fr; height: auto; gap: 12px; }
+    .hero-triptych .hero-main-photo { grid-column: 1 / -1; height: 240px; }
+    .hero-triptych .photo:not(.hero-main-photo) { height: 155px; }
+    .hero-caption { flex-direction: column; gap: 4px; font-size: 11px; }
+    .home-trust { margin-top: 22px; padding-block: 24px; gap: 20px 12px; }
+    .home-trust div { gap: 8px; font-size: 10px; }
+    .home-trust svg { width: 20px; }
+    .home-why, .home-area, .home-stories { grid-template-columns: 1fr; gap: 28px; }
+    .why-copy { order: -1; }
+    .why-images { gap: 12px; }
+    .why-images .photo:first-child { height: 300px; }
+    .why-images .photo:last-child { height: 230px; margin-bottom: 20px; }
+    .why-list { grid-template-columns: 1fr 1fr; gap: 22px 18px; }
+    .why-list dt { font-size: 13px; }
+    .why-list dd { font-size: 12px; }
+    .home-programs { gap: 28px 16px; margin-top: 28px; }
+    .program-photo .photo { aspect-ratio: 4 / 5; }
+    .program-meta { font-size: 9px; margin-top: 12px; }
+    .program-preview h3 { font-size: 17px; gap: 4px; }
+    .program-preview > p { font-size: 12px; }
+    .program-preview h3 svg { width: 15px; }
+    .area-gallery .area-main { height: 230px; }
+    .area-gallery .photo:not(.area-main) { height: 145px; }
+    .home-packages { grid-template-columns: 1fr; gap: 16px; }
+    .package-preview { padding: 28px; }
+    .package-price { font-size: 32px; margin-top: 16px; }
+    .home-stories > .photo { height: 310px; }
+    .home-quote blockquote { font-size: 19px; }
+    .home-destinations { grid-template-columns: 1fr; gap: 24px; }
+    .destination-main .photo { height: 260px; }
+    .destination-pair { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .destination-pair .photo { height: 170px; }
+    .destination-pair h3 { font-size: 14px; }
+    .home-final { grid-template-columns: 1fr; gap: 28px; }
+    .home-final > .photo { height: 220px; }
+  }
+</style>
