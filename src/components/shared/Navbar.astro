@@ -2,143 +2,64 @@
 import { List } from "@phosphor-icons/react/dist/csr/List";
 import { X } from "@phosphor-icons/react/dist/csr/X";
 import { CaretDown } from "@phosphor-icons/react/dist/csr/CaretDown";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
 import { NAV_MENU, waLink, withBase } from "../../lib/site";
-
 const currentPath = Astro.url.pathname;
-
-function groupIsActive(items: readonly { href: string }[]) {
-  return items.some((item) => withBase(item.href) === currentPath);
-}
+const active = (href: string) => currentPath.replace(/\/$/, "") === withBase(href).replace(/\/$/, "");
 ---
-
-<header class="sticky top-0 z-40 border-b border-primary-100 bg-white/90 backdrop-blur">
-  <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
-    <a href={withBase("/")} class="flex items-center gap-2 text-lg font-extrabold tracking-tight text-primary-900 md:text-xl">
-      <span class="blob-2 flex h-9 w-9 items-center justify-center bg-primary-400 text-sm font-extrabold text-white">
-        KC
-      </span>
-      Kampung Cakap
-    </a>
-
-    <ul class="hidden items-center gap-1 lg:flex">
-      {
-        NAV_MENU.map((entry) =>
-          entry.type === "link" ? (
-            <li>
-              <a
-                href={withBase(entry.href)}
-                class:list={[
-                  "whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-ink/70 transition-colors hover:text-primary-600",
-                  currentPath === withBase(entry.href) && "text-primary-600",
-                ]}
-              >
-                {entry.label}
-              </a>
-            </li>
-          ) : (
-            <li class="group relative">
-              <button
-                type="button"
-                class:list={[
-                  "flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-ink/70 transition-colors hover:text-primary-600",
-                  groupIsActive(entry.items) && "text-primary-600",
-                ]}
-              >
-                {entry.label}
-                <CaretDown size={13} weight="bold" className="transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
-              </button>
-
-              <div class="invisible absolute left-0 top-full w-60 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                <div class="rounded-2xl border border-primary-100 bg-white p-2 shadow-lg">
-                  {entry.items.map((item) => (
-                    <a
-                      href={withBase(item.href)}
-                      class:list={[
-                        "block rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-primary-50 hover:text-primary-600",
-                        currentPath === withBase(item.href) && "bg-primary-50 text-primary-600",
-                      ]}
-                    >
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </li>
-          ),
-        )
-      }
+<header class="site-header">
+  <nav class="container nav-inner" aria-label="Navigasi utama">
+    <a href={withBase("/")} class="brand" aria-label="Kampung Cakap, beranda"><span class="brand-mark">KC</span>Kampung Cakap</a>
+    <ul class="nav-links">
+      {NAV_MENU.map(entry => <li>
+        {entry.type === "link" ? <a href={withBase(entry.href)} aria-current={active(entry.href) ? "page" : undefined}>{entry.label}</a> :
+          <details class="nav-dropdown">
+            <summary class:list={{ "is-active": entry.items.some(item => active(item.href)) }}>{entry.label}<CaretDown size={12} weight="bold" /></summary>
+            <div class="dropdown-panel">{entry.items.map(item => <a href={withBase(item.href)} aria-current={active(item.href) ? "page" : undefined}>{item.label}</a>)}</div>
+          </details>
+        }
+      </li>)}
     </ul>
-
-    <a
-      href={waLink("Halo, saya mau daftar Kampung Cakap English Center")}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="hidden rounded-full bg-cta px-5 py-2.5 text-sm font-bold text-white transition-transform active:scale-[0.98] lg:inline-block"
-    >
-      Daftar Sekarang
-    </a>
-
-    <button
-      id="mobile-menu-btn"
-      class="grid h-10 w-10 place-items-center rounded-full border border-primary-100 text-ink lg:hidden"
-      aria-label="Buka menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <List id="menu-icon-open" size={22} weight="bold" />
-      <X id="menu-icon-close" size={22} weight="bold" className="hidden" />
+    <a href={waLink("Halo, saya mau daftar Kampung Cakap English Center")} target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">Daftar Sekarang<ArrowUpRight size={16} weight="bold" /></a>
+    <button id="mobile-menu-btn" class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+      <List id="menu-icon-open" size={22} /><X id="menu-icon-close" size={22} className="hidden" />
     </button>
   </nav>
-
-  <div id="mobile-menu" class="hidden max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-primary-100 bg-white lg:hidden">
-    <ul class="flex flex-col gap-1 px-4 py-3">
-      {
-        NAV_MENU.map((entry) =>
-          entry.type === "link" ? (
-            <li>
-              <a href={withBase(entry.href)} class="block rounded-lg px-3 py-2 text-sm font-medium text-ink/80 hover:bg-primary-50">
-                {entry.label}
-              </a>
-            </li>
-          ) : (
-            <li class="pt-2">
-              <p class="px-3 text-xs font-bold uppercase tracking-wide text-ink/40">{entry.label}</p>
-              <ul class="mt-1">
-                {entry.items.map((item) => (
-                  <li>
-                    <a href={withBase(item.href)} class="block rounded-lg px-3 py-2 text-sm font-medium text-ink/80 hover:bg-primary-50">
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ),
-        )
-      }
-      <li class="pt-2">
-        <a
-          href={waLink("Halo, saya mau daftar Kampung Cakap English Center")}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block rounded-full bg-cta px-4 py-2.5 text-center text-sm font-bold text-white"
-        >
-          Daftar Sekarang
-        </a>
-      </li>
-    </ul>
-  </div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Navigasi mobile" hidden>
+    <div class="container">
+      <ul>{NAV_MENU.map(entry => <li class:list={{ "mobile-group": entry.type === "group" }}>
+        {entry.type === "link" ? <a href={withBase(entry.href)} aria-current={active(entry.href) ? "page" : undefined}>{entry.label}</a> : <><p>{entry.label}</p><ul>{entry.items.map(item => <li><a href={withBase(item.href)} aria-current={active(item.href) ? "page" : undefined}>{item.label}</a></li>)}</ul></>}
+      </li>)}</ul>
+      <a href={waLink("Halo, saya mau daftar Kampung Cakap English Center")} target="_blank" rel="noopener noreferrer" class="btn btn-primary">Daftar Sekarang<ArrowUpRight size={16} weight="bold" /></a>
+    </div>
+  </nav>
 </header>
-
 <script>
-  const btn = document.getElementById("mobile-menu-btn");
-  const menu = document.getElementById("mobile-menu");
-  const iconOpen = document.getElementById("menu-icon-open");
-  const iconClose = document.getElementById("menu-icon-close");
-  btn?.addEventListener("click", () => {
-    const isOpen = menu?.classList.toggle("hidden") === false;
-    btn.setAttribute("aria-expanded", String(isOpen));
-    iconOpen?.classList.toggle("hidden", isOpen);
-    iconClose?.classList.toggle("hidden", !isOpen);
+  const button = document.querySelector<HTMLButtonElement>("#mobile-menu-btn");
+  const menu = document.querySelector<HTMLElement>("#mobile-menu");
+  const openIcon = document.getElementById("menu-icon-open");
+  const closeIcon = document.getElementById("menu-icon-close");
+  function setMenu(open: boolean) {
+    if (!button || !menu) return;
+    menu.hidden = !open;
+    button.setAttribute("aria-expanded", String(open));
+    button.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+    openIcon?.classList.toggle("hidden", open);
+    closeIcon?.classList.toggle("hidden", !open);
+  }
+  button?.addEventListener("click", () => setMenu(menu?.hidden ?? true));
+  const dropdowns = [...document.querySelectorAll<HTMLDetailsElement>(".nav-dropdown")];
+  dropdowns.forEach(detail => detail.addEventListener("toggle", () => {
+    if (detail.open) dropdowns.forEach(other => { if (other !== detail) other.open = false; });
+  }));
+  document.addEventListener("click", event => {
+    if (!(event.target instanceof Node)) return;
+    dropdowns.forEach(detail => { if (!detail.contains(event.target as Node)) detail.open = false; });
   });
+  document.addEventListener("keydown", event => {
+    if (event.key !== "Escape") return;
+    if (menu && !menu.hidden) { setMenu(false); button?.focus(); }
+    dropdowns.forEach(detail => { if (detail.open) { detail.open = false; detail.querySelector("summary")?.focus(); } });
+  });
+  matchMedia("(min-width: 1024px)").addEventListener("change", event => { if (event.matches) setMenu(false); });
 </script>
