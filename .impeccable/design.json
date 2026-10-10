@@ -1,0 +1,442 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-10T05:57:06.232430+00:00",
+  "title": "Design System: Kampung Cakap English Center",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Daylight Canvas",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.00000 0.00)",
+          "oklch(26% 0.00000 0.00)",
+          "oklch(38% 0.00000 0.00)",
+          "oklch(49% 0.00000 0.00)",
+          "oklch(61% 0.00000 0.00)",
+          "oklch(72% 0.00000 0.00)",
+          "oklch(84% 0.00000 0.00)",
+          "oklch(95% 0.00000 0.00)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Cool Surface",
+        "canonical": "#f4f9fc",
+        "tonalRamp": [
+          "oklch(15% 0.00667 233.64)",
+          "oklch(26% 0.00667 233.64)",
+          "oklch(38% 0.00667 233.64)",
+          "oklch(49% 0.00667 233.64)",
+          "oklch(61% 0.00667 233.64)",
+          "oklch(72% 0.00667 233.64)",
+          "oklch(84% 0.00667 233.64)",
+          "oklch(95% 0.00667 233.64)"
+        ]
+      },
+      "sky-surface": {
+        "role": "secondary",
+        "displayName": "Sky Surface",
+        "canonical": "#e8f5fc",
+        "tonalRamp": [
+          "oklch(15% 0.01670 230.90)",
+          "oklch(26% 0.01670 230.90)",
+          "oklch(38% 0.01670 230.90)",
+          "oklch(49% 0.01670 230.90)",
+          "oklch(61% 0.01670 230.90)",
+          "oklch(72% 0.01670 230.90)",
+          "oklch(84% 0.01670 230.90)",
+          "oklch(95% 0.01670 230.90)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Campus Ink",
+        "canonical": "#172b3a",
+        "tonalRamp": [
+          "oklch(15% 0.03806 242.27)",
+          "oklch(26% 0.03806 242.27)",
+          "oklch(38% 0.03806 242.27)",
+          "oklch(49% 0.03806 242.27)",
+          "oklch(61% 0.03806 242.27)",
+          "oklch(72% 0.03806 242.27)",
+          "oklch(84% 0.03806 242.27)",
+          "oklch(95% 0.03806 242.27)"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Body Slate",
+        "canonical": "#465966",
+        "tonalRamp": [
+          "oklch(15% 0.03163 238.29)",
+          "oklch(26% 0.03163 238.29)",
+          "oklch(38% 0.03163 238.29)",
+          "oklch(49% 0.03163 238.29)",
+          "oklch(61% 0.03163 238.29)",
+          "oklch(72% 0.03163 238.29)",
+          "oklch(84% 0.03163 238.29)",
+          "oklch(95% 0.03163 238.29)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#5a6b77",
+        "tonalRamp": [
+          "oklch(15% 0.02796 238.86)",
+          "oklch(26% 0.02796 238.86)",
+          "oklch(38% 0.02796 238.86)",
+          "oklch(49% 0.02796 238.86)",
+          "oklch(61% 0.02796 238.86)",
+          "oklch(72% 0.02796 238.86)",
+          "oklch(84% 0.02796 238.86)",
+          "oklch(95% 0.02796 238.86)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Quiet Line",
+        "canonical": "#dce5eb",
+        "tonalRamp": [
+          "oklch(15% 0.01268 236.64)",
+          "oklch(26% 0.01268 236.64)",
+          "oklch(38% 0.01268 236.64)",
+          "oklch(49% 0.01268 236.64)",
+          "oklch(61% 0.01268 236.64)",
+          "oklch(72% 0.01268 236.64)",
+          "oklch(84% 0.01268 236.64)",
+          "oklch(95% 0.01268 236.64)"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Deep Campus Blue",
+        "canonical": "#07557c",
+        "tonalRamp": [
+          "oklch(15% 0.09292 238.73)",
+          "oklch(26% 0.09292 238.73)",
+          "oklch(38% 0.09292 238.73)",
+          "oklch(49% 0.09292 238.73)",
+          "oklch(61% 0.09292 238.73)",
+          "oklch(72% 0.09292 238.73)",
+          "oklch(84% 0.09292 238.73)",
+          "oklch(95% 0.09292 238.73)"
+        ]
+      },
+      "focus": {
+        "role": "secondary",
+        "displayName": "Focus Blue",
+        "canonical": "#0284c7",
+        "tonalRamp": [
+          "oklch(15% 0.13887 241.97)",
+          "oklch(26% 0.13887 241.97)",
+          "oklch(38% 0.13887 241.97)",
+          "oklch(49% 0.13887 241.97)",
+          "oklch(61% 0.13887 241.97)",
+          "oklch(72% 0.13887 241.97)",
+          "oklch(84% 0.13887 241.97)",
+          "oklch(95% 0.13887 241.97)"
+        ]
+      },
+      "orange": {
+        "role": "primary",
+        "displayName": "Warm Action Orange",
+        "canonical": "#c84b0b",
+        "tonalRamp": [
+          "oklch(15% 0.17164 41.25)",
+          "oklch(26% 0.17164 41.25)",
+          "oklch(38% 0.17164 41.25)",
+          "oklch(49% 0.17164 41.25)",
+          "oklch(61% 0.17164 41.25)",
+          "oklch(72% 0.17164 41.25)",
+          "oklch(84% 0.17164 41.25)",
+          "oklch(95% 0.17164 41.25)"
+        ]
+      },
+      "orange-hover": {
+        "role": "primary",
+        "displayName": "Action Orange Hover",
+        "canonical": "#ab3d08",
+        "tonalRamp": [
+          "oklch(15% 0.15439 40.41)",
+          "oklch(26% 0.15439 40.41)",
+          "oklch(38% 0.15439 40.41)",
+          "oklch(49% 0.15439 40.41)",
+          "oklch(61% 0.15439 40.41)",
+          "oklch(72% 0.15439 40.41)",
+          "oklch(84% 0.15439 40.41)",
+          "oklch(95% 0.15439 40.41)"
+        ]
+      },
+      "yellow": {
+        "role": "tertiary",
+        "displayName": "Sunlight Yellow",
+        "canonical": "#fde047",
+        "tonalRamp": [
+          "oklch(15% 0.16568 98.11)",
+          "oklch(26% 0.16568 98.11)",
+          "oklch(38% 0.16568 98.11)",
+          "oklch(49% 0.16568 98.11)",
+          "oklch(61% 0.16568 98.11)",
+          "oklch(72% 0.16568 98.11)",
+          "oklch(84% 0.16568 98.11)",
+          "oklch(95% 0.16568 98.11)"
+        ]
+      },
+      "secondary-border": {
+        "role": "neutral",
+        "displayName": "Secondary Border",
+        "canonical": "#b3c4cf",
+        "tonalRamp": [
+          "oklch(15% 0.02427 236.06)",
+          "oklch(26% 0.02427 236.06)",
+          "oklch(38% 0.02427 236.06)",
+          "oklch(49% 0.02427 236.06)",
+          "oklch(61% 0.02427 236.06)",
+          "oklch(72% 0.02427 236.06)",
+          "oklch(84% 0.02427 236.06)",
+          "oklch(95% 0.02427 236.06)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field Border",
+        "canonical": "#bbcbd6",
+        "tonalRamp": [
+          "oklch(15% 0.02330 237.70)",
+          "oklch(26% 0.02330 237.70)",
+          "oklch(38% 0.02330 237.70)",
+          "oklch(49% 0.02330 237.70)",
+          "oklch(61% 0.02330 237.70)",
+          "oklch(72% 0.02330 237.70)",
+          "oklch(84% 0.02330 237.70)",
+          "oklch(95% 0.02330 237.70)"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Error Rust",
+        "canonical": "#a52b18",
+        "tonalRamp": [
+          "oklch(15% 0.16142 31.72)",
+          "oklch(26% 0.16142 31.72)",
+          "oklch(38% 0.16142 31.72)",
+          "oklch(49% 0.16142 31.72)",
+          "oklch(61% 0.16142 31.72)",
+          "oklch(72% 0.16142 31.72)",
+          "oklch(84% 0.16142 31.72)",
+          "oklch(95% 0.16142 31.72)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Home display",
+        "purpose": "Bold home tagline; responsive overrides are documented in DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Shared bold section headings."
+      },
+      "page-title": {
+        "displayName": "Internal page title",
+        "purpose": "Shared photographic PageHero titles."
+      },
+      "faq-title": {
+        "displayName": "FAQ conversational title",
+        "purpose": "Intentionally normal-weight FAQ headline."
+      },
+      "contact-title": {
+        "displayName": "Contact conversational title",
+        "purpose": "Intentionally normal-weight contact headline."
+      },
+      "title": {
+        "displayName": "Program title",
+        "purpose": "Home program-preview names."
+      },
+      "body": {
+        "displayName": "Reading body",
+        "purpose": "Normal-weight body copy."
+      },
+      "label": {
+        "displayName": "Action label",
+        "purpose": "Bold primary and secondary action labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "navigation-dropdown",
+        "value": "0 12px 35px rgb(23 43 58 / .12)",
+        "purpose": "Floating desktop navigation panel only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "action-transition",
+        "value": "background .2s, color .2s, transform .2s",
+        "purpose": "Primary and secondary action state changes."
+      },
+      {
+        "name": "program-photo-hover",
+        "value": "transform .35s",
+        "purpose": "Program preview photograph scales to 1.035."
+      },
+      {
+        "name": "triptych-reveal-duration",
+        "value": ".9s",
+        "purpose": "One visible-baseline home image clip reveal, disabled for reduced motion."
+      },
+      {
+        "name": "triptych-reveal-ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Home photo reveal easing."
+      },
+      {
+        "name": "reduced-motion-duration",
+        "value": ".01ms",
+        "purpose": "Global reduced-motion animation and transition duration."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-max",
+        "value": "767px"
+      },
+      {
+        "name": "interior-compact-max",
+        "value": "900px"
+      },
+      {
+        "name": "alumni-contact-compact-max",
+        "value": "1000px"
+      },
+      {
+        "name": "navigation-home-tablet-max",
+        "value": "1023px"
+      },
+      {
+        "name": "desktop-navigation-min",
+        "value": "1024px"
+      },
+      {
+        "name": "navigation-tight-max",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Registration or consultation action.",
+      "html": "<button class=\"ds-primary\" type=\"button\">Daftar Sekarang</button>",
+      "css": ".ds-primary{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:13px 23px;border-radius:999px;font-size:14px;line-height:1.4;font-weight:700;text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s,transform .2s;background:var(--orange,#c84b0b);color:#fff}.ds-primary:hover{background:#ab3d08}.ds-primary:active{transform:scale(.98)}.ds-primary:focus-visible{outline:3px solid #0284c7;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-secondary{transition-duration:.01ms}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Alternative program-browsing action.",
+      "html": "<a class=\"ds-secondary\" href=\"/program/\">Lihat Program</a>",
+      "css": ".ds-secondary{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:13px 23px;border-radius:999px;font-size:14px;line-height:1.4;font-weight:700;text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s,transform .2s;background:#fff;color:var(--ink,#172b3a);border-color:#b3c4cf}.ds-secondary:hover{background:var(--sky-surface,#e8f5fc);border-color:var(--blue,#07557c)}.ds-secondary:active{transform:scale(.98)}.ds-secondary:focus-visible{outline:3px solid #0284c7;outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-secondary{transition-duration:.01ms}}"
+    },
+    {
+      "name": "Contact Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Persistent label and visible validation state.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-name\">Nama <span>(wajib)</span></label><input id=\"ds-name\" type=\"text\" autocomplete=\"name\" required placeholder=\"Nama lengkap kamu\" /></div>",
+      "css": ".ds-field{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);display:grid;gap:8px}.ds-field label{font-size:.88rem;font-weight:700;color:#172b3a}.ds-field label span{font-weight:400;color:#5a6b77}.ds-field input{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);width:100%;min-width:0;min-height:50px;border:1px solid #bbcbd6;border-radius:10px;padding:12px 14px;background:white;color:#172b3a;font-size:.95rem;caret-color:#07557c}.ds-field input::placeholder{color:#5a6b77;opacity:1}.ds-field input[aria-invalid=\"true\"]{border-color:#a52b18}.ds-field input:focus-visible{outline:3px solid #0284c7;outline-offset:5px;}"
+    },
+    {
+      "name": "Context Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Static contextual label, not a heading eyebrow.",
+      "html": "<span class=\"ds-tag\">Foto ilustrasi</span>",
+      "css": ".ds-tag{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:var(--sky-surface,#e8f5fc);color:var(--blue,#07557c);font-size:12px;line-height:1.5;font-weight:600}"
+    },
+    {
+      "name": "Alumni Filter",
+      "kind": "chip",
+      "refersTo": "alumni-filter",
+      "description": "Pressed state denotes the active story filter.",
+      "html": "<div class=\"ds-filters\"><button type=\"button\" aria-pressed=\"true\">Semua</button><button type=\"button\" aria-pressed=\"false\">Confidence</button></div>",
+      "css": ".ds-filters{display:flex;gap:10px;flex-wrap:wrap;padding:22px 0;border-top:1px solid #dce5eb;border-bottom:1px solid #dce5eb}.ds-filters button{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);min-height:46px;padding:10px 20px;border:1px solid #dce5eb;border-radius:999px;background:white;color:#07557c;font-weight:600;font-size:.9rem;cursor:pointer}.ds-filters button:hover{background:#e8f5fc}.ds-filters button[aria-pressed=\"true\"]{background:#07557c;border-color:#07557c;color:white}.ds-filters button:focus-visible{outline:3px solid #0284c7;outline-offset:5px;}"
+    },
+    {
+      "name": "Package Panel",
+      "kind": "card",
+      "refersTo": "package-card",
+      "description": "Flat selected package surface; prices are deliberately omitted from this preview.",
+      "html": "<article class=\"ds-package\"><p class=\"ds-purpose\">Mulai membangun keberanian</p><h3>Confidence</h3><p class=\"ds-description\">Harga pada situs masih estimasi; konfirmasi sebelum mendaftar.</p></article>",
+      "css": ".ds-package{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);padding:30px;background:var(--sky-surface,#e8f5fc);border-radius:16px;display:flex;flex-direction:column;color:var(--ink,#172b3a)}.ds-purpose{margin:0;font-size:12px;font-weight:500;color:var(--body,#465966)}.ds-package h3{margin:6px 0 0;font-size:25px;font-weight:700}.ds-description{margin:14px 0 0;font-size:13px;line-height:1.7;color:var(--body,#465966)}"
+    },
+    {
+      "name": "Navigation Dropdown",
+      "kind": "nav",
+      "description": "Native desktop disclosure with the only floating shadow.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Contoh navigasi\"><details><summary>Program<svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></summary><div class=\"ds-dropdown\"><a href=\"/program/\" aria-current=\"page\">Program</a><a href=\"/asrama-english-area/\">Asrama &amp; English Area</a></div></details></nav>",
+      "css": ".ds-nav{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);min-height:180px;color:var(--body,#465966)}.ds-nav details{position:relative;display:inline-block}.ds-nav summary{display:flex;align-items:center;gap:5px;list-style:none;padding:12px 13px;font-size:13px;font-weight:500;cursor:pointer}.ds-nav summary::-webkit-details-marker{display:none}.ds-nav details[open] summary{color:var(--blue,#07557c)}.ds-dropdown{position:absolute;top:calc(100% + 10px);left:0;background:#fff;min-width:235px;border-radius:12px;padding:8px;box-shadow:0 12px 35px rgb(23 43 58 / .12)}.ds-dropdown a{display:block;padding:12px 13px;border-radius:8px;font-size:13px;font-weight:500;text-decoration:none;color:var(--body,#465966)}.ds-dropdown a[aria-current=\"page\"]{color:var(--blue,#07557c);font-weight:700}.ds-dropdown a:hover{background:var(--surface,#f4f9fc)}.ds-nav summary:focus-visible{outline:3px solid #0284c7;outline-offset:5px;}.ds-dropdown a:focus-visible{outline:3px solid #0284c7;outline-offset:5px;}"
+    },
+    {
+      "name": "FAQ Disclosure",
+      "kind": "custom",
+      "description": "Native question row; first item may start open.",
+      "html": "<details class=\"ds-faq\" open><summary><span>Apakah ada kegiatan wisata yang termasuk dalam paket?</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></summary><p>Tidak termasuk otomatis, wisata weekend bersifat opsional dan diatur sendiri oleh peserta di luar jadwal wajib program.</p></details>",
+      "css": ".ds-faq{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);border-top:1px solid #dce5eb;border-bottom:1px solid #dce5eb}.ds-faq summary{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:24px 4px;font-size:1.02rem;line-height:1.55;font-weight:700;color:#172b3a;cursor:pointer;list-style:none}.ds-faq summary::-webkit-details-marker{display:none}.ds-faq summary:hover,.ds-faq[open] summary{color:#07557c}.ds-faq summary svg{flex-shrink:0;color:#07557c}.ds-faq[open] summary svg{transform:rotate(180deg)}.ds-faq p{margin:0;padding:0 36px 26px 4px;color:#465966;line-height:1.8}.ds-faq summary:focus-visible{outline:3px solid #0284c7;outline-offset:5px;}"
+    },
+    {
+      "name": "Information Notice",
+      "kind": "custom",
+      "refersTo": "notice",
+      "description": "Low-depth disclosure panel, without a colored side border.",
+      "html": "<aside class=\"ds-notice\">Foto Pexels adalah ilustrasi, bukan dokumentasi fasilitas atau peserta Kampung Cakap.</aside>",
+      "css": ".ds-notice{font-family:var(--font-sans,\"Plus Jakarta Sans\",ui-sans-serif,system-ui,sans-serif);background:var(--sky-surface,#e8f5fc);color:var(--ink,#172b3a);padding:20px 24px;border-radius:12px;font-size:14px;line-height:1.8}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Campus Life",
+    "overview": "Learning feels like a place people inhabit together. Daylight surfaces, candid photography and calm editorial spacing make the school approachable without disguising the discipline of immersion. The design is custom to Kampung Cakap; informational clarity is an influence, not a borrowed brand system.\n\nPhotographs carry the atmosphere while deep-blue text and warm-orange actions carry orientation. Dense program, housing and price information stays readable through explicit hierarchy and dividers rather than decorative icon-card repetition. The durable brand commitments are the school name, the tagline “Datang Bisu, Pulang Cakap.” and an energetic, friendly, disciplined voice.",
+    "keyCharacteristics": [
+      "Daylight white and sky-blue surfaces.",
+      "Human photography with explicit illustration disclosures.",
+      "Deep-blue orientation and warm-orange actions.",
+      "Rounded photographs, pill controls and flat editorial depth.",
+      "Visible content before hydration and restrained accessible interaction."
+    ],
+    "rules": [
+      {
+        "name": "The Action Contrast Rule",
+        "body": "Use the implemented darker orange for white-label primary actions; do not substitute a brighter decorative orange.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight Has a Job Rule",
+        "body": "Preserve the contrast between bold wayfinding, lighter conversational FAQ/contact headlines and readable normal-weight paragraphs.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Content Rule",
+        "body": "Keep content surfaces flat; reserve the soft shadow for the floating navigation dropdown.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use locally served photography with explicit illustration notes, descriptive alt text and image dimensions.",
+      "**Do** preserve the intentional lighter FAQ/contact headlines and the darker action orange.",
+      "**Do** keep mobile content visible and confine wide tables to their labeled scroll containers.",
+      "**Do** keep visible keyboard focus, native disclosures and reduced-motion behavior.",
+      "**Do** disclose estimated prices, example stories and the demonstration contact destination."
+    ],
+    "donts": [
+      "**Don't** present stock models or scenes as verified staff, students, alumni or campus facilities.",
+      "**Don't** add fake numerical social proof, invented legal identifiers or unverified contact details.",
+      "**Don't** reintroduce decorative blobs, gradients, glass or colored glows into this photographic world.",
+      "**Don't** replace editorial photo-and-copy rhythm with repetitive decorative icon cards.",
+      "**Don't** make content invisible until JavaScript or an entrance animation runs."
+    ]
+  }
+}
