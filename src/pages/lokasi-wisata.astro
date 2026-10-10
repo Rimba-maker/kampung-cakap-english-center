@@ -1,80 +1,80 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/shared/PageHero.astro";
-import BlobDivider from "../components/shared/BlobDivider.astro";
-import { SunHorizon } from "@phosphor-icons/react/dist/csr/SunHorizon";
-import { Fire } from "@phosphor-icons/react/dist/csr/Fire";
-import { Ticket } from "@phosphor-icons/react/dist/csr/Ticket";
-import { Tree } from "@phosphor-icons/react/dist/csr/Tree";
-import { pexelsPhoto, PHOTOS, waLink } from "../lib/site";
+import { photo } from "../lib/photos";
+import { waLink, withBase } from "../lib/site";
 
-const destinasi = [
-  { icon: SunHorizon, title: "Gunung Bromo", body: "Sunrise trip akhir pekan.", photo: PHOTOS.bromoPage },
-  { icon: Fire, title: "Kawah Ijen", body: "Blue fire dan sunrise trek.", photo: PHOTOS.ijenPage },
-  { icon: Ticket, title: "Batu Malang & Jatim Park", body: "Wisata keluarga dan hiburan.", photo: PHOTOS.batuMalangPage },
-  { icon: Tree, title: "Wisata Alam Sekitar Kediri", body: "Pilihan healing yang lebih dekat.", photo: PHOTOS.wisataKediri },
-];
+const destinations = [
+  { key: "bromo", title: "Gunung Bromo", body: "Menyambut sunrise di akhir pekan. Rencanakan perjalanan, transportasi, dan waktu istirahat sebelum kembali ke kegiatan belajar.", alt: "Panorama Gunung Bromo dari koleksi fotografi Pexels", caption: "Panorama Bromo · Foto Pexels, bukan dokumentasi trip peserta." },
+  { key: "ijen", title: "Kawah Ijen", body: "Inspirasi blue fire dan sunrise trek. Periksa kondisi jalur, aturan kunjungan, dan kesiapan fisik sebelum berangkat.", alt: "Lanskap kawah Ijen dari koleksi fotografi Pexels", caption: "Kawah Ijen · Foto Pexels, bukan dokumentasi trip peserta." },
+  { key: "batu", title: "Batu Malang & Jatim Park", body: "Pilihan wisata keluarga dan hiburan untuk mengisi jeda belajar. Tiket, transportasi, dan agenda diatur terpisah.", alt: "Lahan hijau dan perbukitan berkabut di Malang, Jawa Timur", caption: "Lanskap Malang · Foto ilustrasi, bukan foto Jatim Park." },
+  { key: "kediri", title: "Wisata alam sekitar Kediri", body: "Tidak harus selalu pergi jauh. Cari suasana baru bersama teman, dengan tetap menyesuaikan jadwal wajib program.", alt: "Meja belajar dengan laptop pada foto yang berlokasi di Pare, Kediri", caption: "Sudut belajar berkonteks Pare · Bukan foto destinasi wisata." },
+] as const;
 ---
 
-<Layout
-  title="Lokasi & Wisata Sekitar - Kampung Cakap"
-  description="Belajar bahasa Inggris sambil healing ke Bromo, Kawah Ijen, dan Batu Malang di akhir pekan."
->
-  <PageHero
-    title="Belajar Serius, Weekend Healing."
-    subtitle="Salah satu alasan banyak yang datang dari luar kota, lokasi kami dekat dengan beberapa destinasi wisata terbaik Jawa Timur."
-  />
-  <BlobDivider class="text-white -mt-1" />
+<Layout title="Lokasi & Wisata Sekitar - Kampung Cakap" description="Belajar bahasa Inggris sambil healing ke Bromo, Kawah Ijen, dan Batu Malang di akhir pekan.">
+  <PageHero title="Belajar Serius, Weekend Healing." subtitle="Hari-hari untuk belajar. Akhir pekan untuk melihat sisi lain Jawa Timur—kalau kamu ingin, dan jadwal memungkinkan." image={photo("bromo")} alt="Ilustrasi lanskap pegunungan sebagai inspirasi wisata akhir pekan" />
 
-  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
-    <div class="grid grid-cols-2 gap-3 sm:gap-6">
-      {
-        destinasi.map(({ icon: IconEl, title, body, photo }) => (
-          <div class="overflow-hidden rounded-3xl border border-primary-100 bg-white">
-            <img src={pexelsPhoto(photo, 700)} alt={title} class="h-24 w-full object-cover sm:h-48" />
-            <div class="p-3 sm:p-6">
-              <span class="grid h-8 w-8 place-items-center rounded-full bg-primary-50 text-primary-600 sm:h-10 sm:w-10">
-                <IconEl size={18} weight="bold" />
-              </span>
-              <h3 class="mt-2 text-sm font-bold text-primary-900 sm:mt-3 sm:text-lg">{title}</h3>
-              <p class="mt-1 text-xs text-ink/65 sm:text-sm">{body}</p>
-            </div>
-          </div>
-        ))
-      }
+  <section class="section destinations">
+    <div class="container">
+      <div class="section-opening">
+        <h2 class="section-heading">Di luar kelas, ada banyak cerita.</h2>
+        <p class="section-intro">Bromo, Ijen, Batu Malang, dan alam sekitar Kediri bisa jadi inspirasi agenda bersama teman. Ini pilihan perjalanan, bukan janji tur dari lembaga.</p>
+      </div>
+      <div class="destination-grid">
+        {destinations.map((destination) => (
+          <article class="destination">
+            <img class="photo" src={photo(destination.key)} alt={destination.alt} width="1200" height="800" loading="lazy" />
+            <p class="photo-note">{destination.caption}</p>
+            <h3>{destination.title}</h3>
+            <p>{destination.body}</p>
+          </article>
+        ))}
+      </div>
+      <p class="photo-note">Foto Pexels adalah ilustrasi suasana perjalanan; bukan dokumentasi wisata peserta atau verifikasi lokasi pada foto.</p>
+      <div class="notice travel-notice"><strong>Wisata itu opsional.</strong> Kegiatan dilakukan di luar jadwal wajib program dan English Area, bukan kurikulum resmi dan tidak otomatis termasuk paket. Biaya serta pengaturan perjalanan menjadi agenda terpisah peserta.</div>
     </div>
-
-    <p class="mt-8 text-sm italic leading-relaxed text-ink/50">
-      Catatan: kegiatan wisata bersifat opsional di luar jadwal wajib program dan English Area, bukan bagian dari kurikulum resmi.
-    </p>
   </section>
 
-  <section class="bg-primary-50/60 py-16 md:py-20">
-    <div class="mx-auto max-w-5xl px-4 md:px-8">
-      <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">Lokasi Kami</h2>
-      <div class="mt-6 aspect-video w-full overflow-hidden rounded-3xl border border-primary-100">
-        <iframe
-          title="Lokasi Kampung Cakap English Center"
-          src="https://www.google.com/maps?q=Pare,Kediri,Jawa+Timur&output=embed"
-          class="h-full w-full"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+  <section class="section section-soft">
+    <div class="container location-layout">
+      <div class="location-copy">
+        <h2 class="section-heading">Kenali daerahnya sebelum berangkat.</h2>
+        <p class="section-intro">Pare, Kediri, Jawa Timur menjadi konteks lokasi dalam draf program. Gunakan peta untuk mengenali area, bukan sebagai titik tujuan kedatangan.</p>
+        <p>Alamat operasional dan pin lembaga belum dikonfirmasi. Minta alamat lengkap serta petunjuk kedatangan sebelum memesan perjalanan.</p>
+        <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Pare%2C%20Kediri%2C%20Jawa%20Timur" target="_blank" rel="noopener noreferrer">Buka area Pare di Google Maps</a>
+        <figure class="arrival-photo"><img class="photo" src={photo("arrival")} alt="Ilustrasi perjalanan dan kedatangan peserta dari luar kota" width="1200" height="800" loading="lazy" /><figcaption>Ilustrasi perjalanan dari Pexels.</figcaption></figure>
+      </div>
+      <div class="map-panel">
+        <iframe title="Peta umum area Pare, Kediri, bukan pin Kampung Cakap" src="https://www.google.com/maps?q=Pare,Kediri,Jawa+Timur&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>Peta area umum. Bukan alamat atau pin terverifikasi Kampung Cakap.</p>
       </div>
     </div>
   </section>
 
-  <section class="mx-auto max-w-3xl px-4 py-16 text-center md:px-8 md:py-20">
-    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">
-      Udah Kebayang Belajar Sambil Healing?
-    </h2>
-    <a
-      href={waLink("Halo, saya mau daftar Kampung Cakap English Center")}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mt-6 inline-block rounded-full bg-cta px-7 py-3.5 text-sm font-bold text-white transition-transform active:scale-[0.98]"
-    >
-      Daftar Sekarang
-    </a>
-  </section>
+  <section class="section"><div class="container"><div class="cta-panel travel-cta"><div><h2 class="section-heading">Belajarnya dulu. Petualangannya menyusul.</h2><p>Pilih program yang sesuai tujuanmu, lalu susun rencana tinggal dan perjalanan.</p></div><div class="cta-actions"><a class="btn btn-primary" href={waLink("Halo, saya mau daftar Kampung Cakap English Center")} target="_blank" rel="noopener noreferrer">Daftar Sekarang</a><a class="text-link" href={withBase("/program/")}>Jelajahi program</a><small>Tautan WhatsApp memakai nomor demonstrasi.</small></div></div></div></section>
 </Layout>
+
+<style>
+  .section-opening { max-width: 760px; margin-bottom: 38px; }
+  .section-opening p { margin-top: 18px; }
+  .destination-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 28px; }
+  .destination img { aspect-ratio: 3 / 2; }
+  .destination h3 { font-size: 1.45rem; margin: 20px 0 8px; color: #172b3a; letter-spacing: -.025em; }
+  .destination p { max-width: 58ch; color: #465966; }
+  .photo-note, figcaption { font-size: .8rem; color: #5a6b77; margin-top: 14px; }
+  .photo-note { margin-top: 28px; }
+  .travel-notice { margin-top: 28px; }
+  .location-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: start; }
+  .location-copy > p { margin: 18px 0; }
+  .arrival-photo { margin: 30px 0 0; max-width: 340px; }
+  .arrival-photo img { aspect-ratio: 3 / 2; }
+  .map-panel { overflow: hidden; border-radius: 16px; background: #fff; }
+  iframe { display: block; border: 0; width: 100%; min-height: 480px; }
+  .map-panel p { padding: 16px 20px; font-size: .85rem; }
+  .travel-cta { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
+  .travel-cta p { margin-top: 16px; }
+  .cta-actions { display: grid; gap: 14px; justify-items: start; }
+  .cta-actions small { max-width: 27ch; color: #465966; }
+  @media (max-width: 767px) { .destination-grid { gap: 28px; grid-template-columns: 1fr; } .location-layout, .travel-cta { grid-template-columns: 1fr; gap: 30px; } iframe { min-height: 340px; } .arrival-photo { max-width: none; } }
+</style>

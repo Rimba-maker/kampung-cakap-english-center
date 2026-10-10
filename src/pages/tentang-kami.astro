@@ -1,74 +1,62 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/shared/PageHero.astro";
-import BlobDivider from "../components/shared/BlobDivider.astro";
-import { CalendarBlank } from "@phosphor-icons/react/dist/csr/CalendarBlank";
-import { GraduationCap } from "@phosphor-icons/react/dist/csr/GraduationCap";
-import { SealCheck } from "@phosphor-icons/react/dist/csr/SealCheck";
-import { ChalkboardTeacher } from "@phosphor-icons/react/dist/csr/ChalkboardTeacher";
-import { pexelsPhoto, PHOTOS, waLink } from "../lib/site";
-
-const stats = [
-  { icon: CalendarBlank, label: "Berdiri Sejak", value: "[Tahun]" },
-  { icon: GraduationCap, label: "Alumni", value: "2.000+" },
-  { icon: SealCheck, label: "Legalitas", value: "SK Diknas" },
-  { icon: ChalkboardTeacher, label: "Tutor Berpengalaman", value: "[X]" },
-];
+import { photo } from "../lib/photos";
+import { waLink, withBase } from "../lib/site";
 ---
 
-<Layout
-  title="Tentang Kampung Cakap English Center"
-  description="Kampung Cakap English Center percaya cara tercepat belajar bahasa adalah dengan hidup di dalamnya, bukan sekadar menghafal grammar di kelas."
->
-  <PageHero
-    title="Tentang Kampung Cakap."
-    subtitle="Bukan sekolah bahasa biasa. Kami percaya cara tercepat cakap Inggris adalah hidup di dalamnya."
-  />
-  <BlobDivider class="text-white -mt-1" />
+<Layout title="Tentang Kampung Cakap English Center" description="Kampung Cakap English Center percaya cara tercepat belajar bahasa adalah dengan hidup di dalamnya, bukan sekadar menghafal grammar di kelas.">
+  <PageHero title="Tentang Kampung Cakap." subtitle="Bukan sekolah bahasa biasa. Kami percaya cara belajar cakap Inggris adalah hidup di dalamnya." image={photo("teacher-team")} alt="Ilustrasi kelompok dewasa muda belajar bersama di ruang terbuka, bukan tim Kampung Cakap" />
 
-  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
-    <div class="grid items-center gap-10 md:grid-cols-2">
-      <p class="text-base leading-relaxed text-ink/70 md:text-lg">
-        Kampung Cakap English Center berdiri sejak <strong class="text-primary-900">[isi tahun]</strong> dari satu keyakinan sederhana: bahasa paling cepat dikuasai kalau dipakai tiap hari, bukan dihafal di kelas. Sistem immersive kami memaksa otak kamu mikir dalam bahasa Inggris dari bangun sampai tidur lagi, tanpa kehilangan keseruan hidup bareng teman-teman satu asrama.
-      </p>
-      <img
-        src={pexelsPhoto(PHOTOS.teamTutor, 900)}
-        alt="Tim tutor Kampung Cakap bersama peserta"
-        class="aspect-[4/3] w-full rounded-3xl object-cover shadow-lg"
-      />
-    </div>
-
-    <div class="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-      {
-        stats.map(({ icon: IconEl, label, value }) => (
-          <div class="rounded-2xl border border-primary-100 bg-white p-5 text-center">
-            <span class="blob-2 mx-auto grid h-11 w-11 place-items-center bg-primary-400/15 text-primary-600">
-              <IconEl size={20} weight="bold" />
-            </span>
-            <p class="mt-3 text-lg font-extrabold text-primary-900">{value}</p>
-            <p class="mt-1 text-xs text-ink/50">{label}</p>
-          </div>
-        ))
-      }
-    </div>
-
-    <div class="mt-10 rounded-2xl bg-primary-50 p-6 text-sm text-ink/70">
-      <p class="font-bold text-primary-900">Legalitas</p>
-      <p class="mt-1.5">SK Diknas No. [isi sesuai dokumen] &middot; NPSN [isi sesuai dokumen]</p>
-    </div>
-
-    <div class="mt-12 text-center">
-      <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">
-        Siap Jadi Bagian Cerita Kami Berikutnya?
-      </h2>
-      <a
-        href={waLink("Halo, saya mau kenalan lebih jauh sama Kampung Cakap")}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-6 inline-block rounded-full bg-cta px-7 py-3.5 text-sm font-bold text-white transition-transform active:scale-[0.98]"
-      >
-        Daftar Sekarang
-      </a>
+  <section class="section">
+    <div class="container belief-layout">
+      <h2 class="section-heading">Datang Bisu,<br />Pulang Cakap.</h2>
+      <div class="prose"><p>Tagline kami berangkat dari satu keyakinan sederhana: bahasa perlu dipakai setiap hari, bukan hanya dihafal di kelas. Kampung Cakap English Center menggabungkan kelas berjenjang dengan pengalaman tinggal di English Area.</p><p>Tujuannya bukan membuat kamu takut salah. Kami ingin memberi ruang untuk mencoba, dibantu tutor, lalu mencoba lagi—sampai praktik bahasa Inggris menjadi bagian dari keseharianmu.</p><p>Kecepatan kemajuan setiap peserta berbeda. Pilihan level, durasi belajar, dan kebiasaan latihan menjadi bagian penting dari prosesnya.</p></div>
     </div>
   </section>
+
+  <section class="section section-soft">
+    <div class="container mission-layout">
+      <div class="mission-images"><img class="photo mission-main" src={photo("mentoring")} alt="Ilustrasi sesi pendampingan belajar bersama tutor" width="1200" height="800" loading="lazy" /><img class="photo mission-detail" src={photo("study-outdoor")} alt="Ilustrasi peserta belajar bersama di ruang terbuka" width="1200" height="800" loading="lazy" /><p>Foto ilustrasi Pexels, bukan dokumentasi tutor atau peserta Kampung Cakap.</p></div>
+      <div class="mission-copy"><h2 class="section-heading">Bahasa yang dipakai.<br />Keberanian yang dilatih.</h2><p class="section-intro">Misi kami adalah menghubungkan apa yang kamu pelajari dengan apa yang kamu lakukan setiap hari.</p><div class="mission-item"><h3>Praktik dalam keseharian</h3><p>English Area 24 jam menjadikan percakapan di asrama bagian dari latihan, bukan hanya waktu di ruang kelas.</p></div><div class="mission-item"><h3>Belajar dengan pendamping</h3><p>Tutor yang tinggal bersama membantu praktik dan menjaga ritme belajar. Kamu punya teman untuk bertanya, berdiskusi, dan berlatih.</p></div><div class="mission-item"><h3>Jenjang yang punya arah</h3><p>Dari Confidence dan Active hingga Fluent & TOEFL Prep serta Micro Teaching, pilih jalur sesuai dasar dan tujuan belajarmu.</p></div><a class="text-link" href={withBase("/program/")}>Kenali jenjang program</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container transparency-layout">
+      <div><h2 class="section-heading">Kenal lebih dekat,<br />dengan informasi yang jelas.</h2><p class="section-intro">Kami membedakan rancangan program dari informasi institusi yang masih perlu dikonfirmasi.</p></div>
+      <div class="institution-info"><h3>Informasi institusi</h3><dl><div><dt>Tahun berdiri</dt><dd>Belum dikonfirmasi.</dd></div><div><dt>SK Diknas & NPSN</dt><dd>Nomor dan dokumen legalitas belum tersedia untuk diverifikasi.</dd></div><div><dt>Tim & jumlah alumni</dt><dd>Profil tutor serta jumlah alumni belum terverifikasi; tidak ditampilkan sebagai klaim.</dd></div><div><dt>Alamat operasional</dt><dd>Alamat lengkap dan pin lembaga masih perlu dikonfirmasi.</dd></div></dl><p>Pastikan detail institusi dan pendaftaran melalui kontak resmi yang terverifikasi sebelum melakukan pembayaran. Nomor WhatsApp situs ini masih demonstrasi.</p></div>
+    </div>
+  </section>
+
+  <section class="section section-soft"><div class="container about-close"><img class="photo" src={photo("discussion")} alt="Ilustrasi percakapan santai dalam kelompok belajar" width="1200" height="800" loading="lazy" /><div><h2 class="section-heading">Perjalanan cakap dimulai dari percakapan.</h2><p>Ceritakan tujuanmu dan cari tahu program yang paling sesuai.</p><a class="btn btn-primary" href={waLink("Halo, saya mau kenalan lebih jauh sama Kampung Cakap")} target="_blank" rel="noopener noreferrer">Kenalan via WhatsApp</a><p class="close-note">Foto Pexels adalah ilustrasi. Tautan WhatsApp memakai nomor demonstrasi.</p></div></div></section>
 </Layout>
+
+<style>
+  .belief-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; }
+  .belief-layout h2 { color: #07557c; }
+  .prose p + p { margin-top: 22px; }
+  .mission-layout { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: start; }
+  .mission-images { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .mission-main { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+  .mission-detail { grid-column: 2; aspect-ratio: 1; }
+  .mission-images p { align-self: end; grid-column: 1; grid-row: 2; font-size: .8rem; color: #5a6b77; }
+  .mission-copy > p { margin: 20px 0 28px; }
+  .mission-item { padding: 22px 0; border-top: 1px solid #dce5eb; }
+  .mission-item h3 { font-size: 1.2rem; margin-bottom: 8px; }
+  .mission-copy > a { display: inline-block; margin-top: 14px; }
+  .transparency-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  .transparency-layout .section-intro { margin-top: 20px; }
+  .institution-info { padding: 28px; border: 1px solid #dce5eb; border-radius: 16px; }
+  .institution-info h3 { font-size: 1.3rem; }
+  dl { margin-top: 12px; }
+  dl > div { padding: 17px 0; border-bottom: 1px solid #dce5eb; }
+  dt { font-weight: 700; color: #172b3a; }
+  dd { margin: 5px 0 0; color: #465966; }
+  .institution-info > p { font-size: .85rem; margin-top: 20px; color: #465966; }
+  .about-close { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .about-close img { aspect-ratio: 3 / 2; }
+  .about-close p { margin: 18px 0 24px; }
+  .about-close .close-note { margin-bottom: 0; font-size: .8rem; color: #5a6b77; }
+  @media (max-width: 767px) { .belief-layout, .mission-layout, .transparency-layout, .about-close { grid-template-columns: 1fr; gap: 32px; } .mission-images { order: 2; } .institution-info { padding: 22px; } }
+</style>
