@@ -1,103 +1,83 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/shared/PageHero.astro";
-import BlobDivider from "../components/shared/BlobDivider.astro";
-import RevealGrid from "../components/shared/RevealGrid";
-import { waLink, pexelsPhoto, PHOTOS } from "../lib/site";
+import { waLink, withBase } from "../lib/site";
+import { photo } from "../lib/photos";
 
-const caraKerja = [
-  { icon: "Buildings", title: "Seluruh Area Wajib Bahasa Inggris", body: "Dengan teman sekamar, tutor, bahkan obrolan santai di ruang makan." },
-  { icon: "UsersThree", title: "Tutor Tinggal Bareng Kamu", body: "Tinggal di asrama yang sama, mengoreksi speaking dan jadi partner ngobrol kapan saja." },
-  { icon: "ChatsCircle", title: "Ada Area Bebas Bahasa", body: "Beberapa area tertentu (jika ada) ditetapkan sebagai zona istirahat total dari aturan wajib." },
-] as const;
-
-const aturanAsrama = [
-  { icon: "GenderNeuter", title: "Asrama Terpisah", body: "Asrama putra dan putri terpisah total." },
-  { icon: "UsersThree", title: "Isi Kamar", body: "4-5 orang untuk asrama, 2-3 orang untuk kos (lebih privat)." },
-  { icon: "MoonStars", title: "Jam Malam", body: "Sekitar pukul 21.00-22.00 WIB." },
-  { icon: "Prohibit", title: "Dilarang Merokok", body: "Berlaku di seluruh area asrama." },
-  { icon: "Broom", title: "Piket Kebersihan", body: "Dijadwalkan bergiliran tiap penghuni." },
-  { icon: "UserCircle", title: "Tamu Dibatasi", body: "Tamu dari luar hanya boleh berkunjung sampai batas waktu tertentu." },
-] as const;
+const rules = [
+  { title: "Putra & putri terpisah", body: "Asrama putra dan putri terpisah total." },
+  { title: "Berbagi kamar", body: "Asrama diisi 4–5 orang per kamar. Kos diisi 2–3 orang untuk pilihan lebih privat." },
+  { title: "Jam malam", body: "Sekitar pukul 21.00–22.00 WIB. Konfirmasi jam yang berlaku saat pendaftaran." },
+  { title: "Area tanpa rokok", body: "Dilarang merokok di seluruh area asrama." },
+  { title: "Jaga ruang bersama", body: "Jadwal piket kebersihan bergiliran untuk semua penghuni." },
+  { title: "Kunjungan tamu", body: "Tamu dari luar hanya boleh berkunjung sampai batas waktu yang ditentukan." },
+];
 ---
 
-<Layout
-  title="Sistem Asrama English Area 24 Jam - Kampung Cakap"
-  description="Asrama dengan aturan wajib berbahasa Inggris 24 jam, didampingi tutor tinggal bersama. Cara efektif belajar cepat."
->
-  <PageHero
-    title="English Area, Zona Wajib Bahasa Inggris 24 Jam."
-    subtitle="Ini yang membedakan kami dari kursus biasa. Bukan cuma belajar di kelas, tapi hidup dalam bahasa Inggris setiap hari."
-  />
-  <BlobDivider class="text-white -mt-1" />
+<Layout title="Sistem Asrama English Area 24 Jam - Kampung Cakap" description="Asrama dengan aturan wajib berbahasa Inggris 24 jam, didampingi tutor tinggal bersama. Cara efektif belajar cepat.">
+  <PageHero title="English Area, Zona Wajib Bahasa Inggris 24 Jam." subtitle="Bukan cuma belajar di kelas, tapi hidup dalam bahasa Inggris setiap hari. Teman sekamar, tutor, dan obrolan santai jadi bagian dari latihanmu." image={photo("dorm-common")} alt="Ilustrasi ruang bersama untuk aktivitas penghuni" />
 
-  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
-    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">Cara Kerja English Area</h2>
-    <div class="mt-8">
-      <RevealGrid client:visible items={caraKerja} columns="md:grid-cols-3" blob="blob-1" />
+  <section class="section">
+    <div class="container content-grid immersion-intro">
+      <div><h2 class="section-heading">Praktik tidak berhenti saat kelas selesai.</h2><p class="section-intro">Seluruh area asrama adalah zona wajib berbahasa Inggris. Dari ngobrol dengan teman sekamar sampai makan bersama, kesempatan latihan selalu dekat.</p><div class="immersion-copy"><h3>Bahasa Inggris jadi kebiasaan</h3><p>Kamu menggunakannya di percakapan sehari-hari, bukan hanya saat mengerjakan materi kelas.</p><h3>Ruang istirahat, jika tersedia</h3><p>Beberapa area tertentu dapat ditetapkan sebagai “area bebas bahasa” untuk istirahat total. Ketersediaan dan ketentuannya perlu dikonfirmasi dengan tutor.</p></div><a class="text-link" href={withBase("/program/")}>Kenali jenjang belajarnya</a></div>
+      <figure><img class="photo" src={photo("friends")} alt="Ilustrasi sekelompok teman mengobrol bersama" width="1200" height="800" loading="lazy" /><figcaption>Obrolan sehari-hari menjadi kesempatan latihan. Foto ilustrasi Pexels.</figcaption></figure>
     </div>
   </section>
 
-  <section class="bg-primary-50/60 py-16 md:py-20">
-    <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 md:grid-cols-2 md:px-8">
-      <div class="relative mx-auto aspect-square w-full max-w-xs">
-        <div class="absolute -inset-3 -z-10 rounded-[2rem] bg-primary-400/25"></div>
-        <img
-          src={pexelsPhoto(PHOTOS.tutorMentoring, 700)}
-          alt="Tutor mendampingi siswa ngobrol santai di asrama"
-          class="h-full w-full rounded-3xl object-cover shadow-xl"
-        />
+  <section class="section section-soft">
+    <div class="container content-grid tutor-section">
+      <figure><img class="photo" src={photo("mentoring")} alt="Ilustrasi pendampingan belajar dalam suasana santai" width="1200" height="800" loading="lazy" /><figcaption>Ilustrasi pendampingan, bukan foto tutor Kampung Cakap.</figcaption></figure>
+      <div><h2 class="section-heading">Ada tutor yang tinggal bersama kamu.</h2><p class="section-intro">Tutor pendamping tinggal di asrama yang sama, mengoreksi speaking dan menjadi partner ngobrol. Kamu punya tempat bertanya saat sedang mencoba.</p><div class="consequences"><h3>Salah bahasa? Tambah kesempatan latihan.</h3><p>Ketahuan ngomong Bahasa Indonesia? Konsekuensinya bisa berupa hafalan vocabulary tambahan atau speech singkat di depan penghuni lain.</p><p>Tujuannya bukan menghukum berat, tetapi memacu supaya kamu terus terpapar bahasa Inggris. Disiplin dijalankan dengan semangat belajar.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Pilih cara tinggal yang cocok.</h2><p class="section-intro">Lebih banyak teman sekamar atau sedikit lebih privat, keduanya mendukung rutinitas belajar. Biaya tempat tinggal terpisah dari kursus.</p>
+      <div class="accommodation-grid">
+        <article><img class="photo" src={photo("dorm-room")} alt="Ilustrasi kamar dengan tempat tidur untuk akomodasi bersama" width="1200" height="800" loading="lazy" /><div class="room-heading"><h3>Asrama</h3><span class="tag">4–5 orang / kamar</span></div><p>Untuk pengalaman berbagi keseharian dengan lebih banyak teman satu program.</p></article>
+        <article><img class="photo" src={photo("dorm-study")} alt="Ilustrasi ruang tinggal dan belajar yang tenang" width="1200" height="800" loading="lazy" /><div class="room-heading"><h3>Kos</h3><span class="tag">2–3 orang / kamar</span></div><p>Pilihan lebih privat, dengan kewajiban mengikuti jadwal program secara penuh.</p></article>
       </div>
-
-      <div class="rounded-3xl border-2 border-accent-yellow-dark/40 bg-white p-7 md:p-8">
-        <p class="text-xs font-bold uppercase tracking-wide text-cta">Sistem "Hukuman" Seru</p>
-        <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-primary-900">Ketahuan Ngomong Bahasa Indonesia?</h2>
-        <p class="mt-4 text-sm leading-relaxed text-ink/70">
-          Konsekuensinya bervariasi: hafalan vocabulary tambahan, atau speech singkat di depan penghuni asrama lain. Tujuannya bukan menghukum, tapi memacu supaya kamu terus terpapar bahasa Inggris. Justru ini yang paling sering diceritain alumni sebagai bagian paling seru.
-        </p>
-      </div>
+      <p class="small-note">Foto Pexels merupakan ilustrasi tipe ruang, bukan dokumentasi kamar yang tersedia.</p>
+      <div class="room-amenities"><div><h3>Fasilitas kamar</h3><p>Kasur, lemari, kipas angin atau AC sesuai tipe kamar, akses dapur umum, dan laundry sebagai pilihan tambahan.</p></div><a class="text-link" href={withBase("/harga/#biaya-tempat-tinggal")}>Lihat estimasi biaya tinggal</a></div>
+      <p class="notice recommendation">Tinggal di asrama sangat direkomendasikan untuk hasil maksimal. Jika memilih kos di luar, kamu tetap wajib mengikuti jadwal program secara penuh.</p>
     </div>
   </section>
 
-  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
-    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">Aturan Asrama</h2>
-    <div class="mt-8">
-      <RevealGrid client:visible items={aturanAsrama} columns="grid-cols-2 lg:grid-cols-3" blob="blob-3" />
-    </div>
-
-    <div class="mt-10 rounded-2xl bg-primary-50 p-6">
-      <p class="text-sm font-bold text-primary-900">Fasilitas Kamar</p>
-      <p class="mt-1.5 text-sm leading-relaxed text-ink/70">
-        Kasur, lemari, kipas angin/AC (tergantung tipe kamar), akses dapur umum, opsional laundry.
-      </p>
-    </div>
-
-    <div class="relative mt-6 overflow-hidden rounded-3xl">
-      <img
-        src={pexelsPhoto(PHOTOS.asramaHangout, 1400)}
-        alt="Penghuni asrama santai bareng di luar jam belajar"
-        class="h-56 w-full object-cover md:h-72"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-primary-900/70 via-primary-900/10 to-transparent"></div>
-      <p class="absolute bottom-6 left-6 max-w-sm text-lg font-bold text-white md:text-xl">
-        Di luar jam belajar, tetap seru bareng teman satu asrama.
-      </p>
-    </div>
-
-    <p class="mt-6 text-sm italic leading-relaxed text-ink/50">
-      Catatan: tinggal di asrama sangat direkomendasikan untuk hasil maksimal, namun bagi yang memilih kos di luar, tetap wajib mengikuti jadwal program secara penuh.
-    </p>
+  <section class="section section-soft">
+    <div class="container rules-layout"><div class="rules-intro"><h2 class="section-heading">Nyaman bersama, disiplin bersama.</h2><p class="section-intro">Aturan ini menjaga ritme belajar dan kenyamanan setiap penghuni.</p><img class="photo" src={photo("dining")} alt="Ilustrasi area makan dan berkumpul bersama" width="1200" height="800" loading="lazy" /><p class="small-note">Foto suasana makan bersama: ilustrasi Pexels.</p></div><dl class="rules-list">{rules.map((rule) => <div><dt>{rule.title}</dt><dd>{rule.body}</dd></div>)}</dl></div>
   </section>
 
-  <section class="mx-auto max-w-3xl px-4 py-16 text-center md:px-8 md:py-20">
-    <h2 class="text-2xl font-extrabold tracking-tight text-primary-900 md:text-3xl">Masih Ada Pertanyaan Soal Asrama?</h2>
-    <a
-      href={waLink("Halo, saya mau tanya detail asrama Kampung Cakap")}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mt-6 inline-block rounded-full bg-cta px-7 py-3.5 text-sm font-bold text-white transition-transform active:scale-[0.98]"
-    >
-      Tanya Detail Asrama via WhatsApp
-    </a>
-  </section>
+  <section class="section"><div class="container cta-panel"><h2 class="section-heading">Siapkan tempat tinggalmu sebelum berangkat.</h2><p class="section-intro">Tanyakan tipe kamar, ketentuan asrama, dan ketersediaan untuk intake pilihanmu.</p><div class="closing-actions"><a class="btn btn-primary" href={waLink("Halo, saya mau tanya detail asrama Kampung Cakap")} target="_blank" rel="noopener noreferrer">Tanya Detail Asrama</a><a class="btn btn-secondary" href={withBase("/fasilitas/")}>Jelajahi fasilitas</a></div><p class="small-note">WhatsApp masih memakai nomor demonstrasi; kontak resmi belum dikonfirmasi.</p></div></section>
 </Layout>
+
+<style>
+  figure { margin: 0; }
+  figcaption, .small-note { color: #5a6b77; font-size: .8rem; line-height: 1.65; margin-top: 14px; }
+  .immersion-intro, .tutor-section { align-items: center; }
+  .immersion-intro figure img { aspect-ratio: 5 / 4; height: auto; }
+  .immersion-copy { margin: 28px 0; }
+  h3 { font-size: 1.1rem; font-weight: 700; color: #172b3a; }
+  .immersion-copy h3:not(:first-child) { margin-top: 24px; }
+  .immersion-copy p, .consequences p, .room-amenities p, .accommodation-grid p { margin-top: 9px; color: #465966; line-height: 1.75; }
+  .tutor-section figure img { aspect-ratio: 4 / 5; height: auto; }
+  .consequences { border-top: 1px solid #dce5eb; margin-top: 28px; padding-top: 28px; }
+  .accommodation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
+  .accommodation-grid img { aspect-ratio: 3 / 2; height: auto; }
+  .room-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; justify-content: space-between; margin-top: 22px; }
+  .room-heading h3 { font-size: 1.5rem; }
+  .room-amenities { display: flex; align-items: center; justify-content: space-between; gap: 32px; border-top: 1px solid #dce5eb; margin-top: 36px; padding-top: 28px; }
+  .room-amenities > div { max-width: 720px; }
+  .room-amenities a { flex-shrink: 0; }
+  .recommendation { margin-top: 28px; }
+  .rules-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; }
+  .rules-intro img { margin-top: 28px; aspect-ratio: 3 / 2; height: auto; }
+  .rules-list { margin: 0; }
+  .rules-list > div { padding: 23px 0; border-bottom: 1px solid #dce5eb; }
+  .rules-list > div:first-child { padding-top: 0; }
+  .rules-list dt { color: #172b3a; font-weight: 700; font-size: 1.05rem; }
+  .rules-list dd { margin: 8px 0 0; color: #465966; line-height: 1.7; }
+  .closing-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  @media (max-width: 900px) { .room-amenities { align-items: start; flex-direction: column; gap: 20px; } .rules-layout { gap: 36px; } }
+  @media (max-width: 767px) { .accommodation-grid, .rules-layout { grid-template-columns: 1fr; gap: 36px; } .tutor-section figure img { aspect-ratio: 3 / 2; } }
+</style>

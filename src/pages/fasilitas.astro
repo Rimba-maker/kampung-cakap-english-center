@@ -1,31 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/shared/PageHero.astro";
-import BlobDivider from "../components/shared/BlobDivider.astro";
-import RevealGrid from "../components/shared/RevealGrid";
-import { PHOTOS } from "../lib/site";
+import { withBase, waLink } from "../lib/site";
+import { photo, type PhotoKey } from "../lib/photos";
 
-const fasilitas = [
-  { icon: "Buildings", title: "Asrama & Kos English Area", body: "Tempat tinggal dengan aturan wajib berbahasa Inggris 24 jam.", photo: PHOTOS.dormitory },
-  { icon: "BookOpen", title: "Ruang Kelas Nyaman", body: "Ruang belajar santai, cocok buat diskusi dan praktik speaking.", photo: PHOTOS.ruangKelas },
-  { icon: "ForkKnife", title: "Kantin & Dapur Umum", body: "Tempat makan bareng sekaligus praktik ngobrol bahasa Inggris.", photo: PHOTOS.kantin },
-  { icon: "WifiHigh", title: "WiFi di Area Belajar", body: "Sinyal kenceng buat cari referensi materi atau video call keluarga di rumah." },
-  { icon: "WashingMachine", title: "Laundry", body: "Tinggal add-on kalau nggak sempat nyuci sendiri." },
-  { icon: "Popcorn", title: "Kegiatan Ekstra", body: "Movie night bahasa Inggris, English club, dan aktivitas seru lain.", photo: PHOTOS.kegiatanEkstra },
-] as const;
+const facilities: { title: string; image: PhotoKey; alt: string; body: string; detail: string; link?: string; label?: string }[] = [
+  { title: "Asrama & Kos English Area", image: "dorm-room", alt: "Ilustrasi kamar untuk tinggal bersama", body: "Tempat tinggal dengan aturan wajib berbahasa Inggris 24 jam. Asrama dan kos memberi pilihan pengalaman tinggal bersama atau lebih privat.", detail: "Biaya tinggal terpisah dari kursus.", link: "/asrama-english-area/", label: "Pelajari sistem asrama" },
+  { title: "Ruang Kelas Nyaman", image: "classroom", alt: "Ilustrasi ruang kelas untuk belajar dan berdiskusi", body: "Ruang untuk belajar materi, berdiskusi, dan melatih speaking bersama peserta lain.", detail: "Belajar terstruktur, lalu lanjut praktik di English Area.", link: "/program/", label: "Lihat materi program" },
+  { title: "Kantin & Dapur Umum", image: "kitchen", alt: "Ilustrasi area dapur untuk menyiapkan makanan", body: "Kantin untuk makan dan dapur umum untuk kebutuhan keseharian. Obrolan di sela makan juga jadi bagian dari praktik bahasa Inggris.", detail: "Konfirmasi ketentuan makan dan penggunaan dapur saat konsultasi." },
+  { title: "WiFi di Area Belajar", image: "library", alt: "Ilustrasi deretan rak buku di perpustakaan", body: "Akses internet di area belajar untuk mencari referensi materi dan mendukung aktivitas belajar mandiri.", detail: "Ketersediaan area dan ketentuan akses dapat ditanyakan sebelum datang." },
+  { title: "Laundry", image: "laundry", alt: "Ilustrasi mesin cuci untuk kebutuhan laundry", body: "Pilihan layanan laundry untuk membantu kebutuhan selama tinggal dan belajar.", detail: "Opsional add-on; tidak otomatis termasuk dalam paket kursus." },
+  { title: "Kegiatan Ekstra", image: "movie-night", alt: "Ilustrasi suasana berkumpul untuk kegiatan menonton bersama", body: "Movie night bahasa Inggris, English club, dan kegiatan ekstra memberi ruang praktik dengan suasana berbeda.", detail: "Tanyakan jadwal kegiatan yang tersedia pada intake pilihanmu." },
+];
 ---
 
-<Layout
-  title="Fasilitas Pendukung Belajar - Kampung Cakap"
-  description="Fasilitas pendukung belajar bahasa Inggris immersive di Kampung Cakap English Center: asrama, ruang kelas, kantin, hingga kegiatan ekstra."
->
-  <PageHero
-    title="Fasilitas Pendukung Belajar."
-    subtitle="Semua kebutuhan tinggal dan belajar udah ada, jadi fokus kamu cuma satu: ngomong Inggris tiap hari."
-  />
-  <BlobDivider class="text-white -mt-1" />
+<Layout title="Fasilitas Pendukung Belajar - Kampung Cakap" description="Fasilitas pendukung belajar bahasa Inggris immersive di Kampung Cakap English Center: asrama, ruang kelas, kantin, hingga kegiatan ekstra.">
+  <PageHero title="Fasilitas Pendukung Belajar." subtitle="Ruang untuk belajar, tempat untuk tinggal, dan keseharian yang membuka lebih banyak kesempatan ngomong Inggris." image={photo("campus")} alt="Ilustrasi lingkungan kampus dan ruang aktivitas pelajar" />
 
-  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
-    <RevealGrid client:visible items={fasilitas} columns="grid-cols-2 lg:grid-cols-3" blob="blob-1" />
+  <section class="section">
+    <div class="container">
+      <div class="directory-heading"><h2 class="section-heading">Lihat keseharianmu di sini.</h2><p class="section-intro">Enam fasilitas pendukung, dari kebutuhan di kelas sampai rutinitas di luar kelas. Kenali apa yang tersedia dan apa yang perlu kamu konfirmasi.</p></div>
+      <p class="notice illustration-note">Seluruh foto di halaman ini adalah ilustrasi dari Pexels, bukan dokumentasi fasilitas Kampung Cakap. Detail fasilitas dan ketersediaannya perlu dikonfirmasi sebelum mendaftar.</p>
+      <div class="facility-directory">
+        {facilities.map((facility) => <article class="facility">
+          <img class="photo" src={photo(facility.image)} alt={facility.alt} width="1200" height="800" loading="lazy" />
+          <div class="facility-copy"><h3>{facility.title}</h3><p>{facility.body}</p><p class="facility-detail">{facility.detail}</p>{facility.link && <a class="text-link" href={withBase(facility.link)}>{facility.label}</a>}</div>
+        </article>)}
+      </div>
+    </div>
   </section>
+
+  <section class="section section-soft">
+    <div class="container content-grid everyday-section">
+      <div><h2 class="section-heading">Bukan hanya tempat duduk di kelas.</h2><p class="section-intro">Pengalaman immersive menyambungkan belajar dan kehidupan sehari-hari. Diskusi di kelas, belajar mandiri, lalu ngobrol lagi dengan teman satu asrama.</p><p class="everyday-copy">Tinggal di asrama direkomendasikan. Jika memilih kos di luar, jadwal program tetap harus diikuti secara penuh.</p><a class="text-link" href={withBase("/asrama-english-area/")}>Kenali aturan & tutor pendamping</a></div>
+      <figure><img class="photo" src={photo("dorm-common")} alt="Ilustrasi ruang bersama untuk berkumpul di luar kelas" width="1200" height="800" loading="lazy" /><figcaption>Foto suasana ruang bersama sebagai ilustrasi Pexels.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section"><div class="container cta-panel"><h2 class="section-heading">Ada kebutuhan khusus selama tinggal?</h2><p class="section-intro">Tanyakan tipe kamar, laundry, atau fasilitas belajar sebelum menentukan paket dan tanggal kedatangan.</p><div class="closing-actions"><a class="btn btn-primary" href={waLink("Halo, saya ingin tanya fasilitas dan kebutuhan tinggal di Kampung Cakap")} target="_blank" rel="noopener noreferrer">Tanya Fasilitas</a><a class="btn btn-secondary" href={withBase("/harga/")}>Lihat biaya kursus & tinggal</a></div><p class="small-note">Tautan WhatsApp memakai nomor demonstrasi; kontak resmi belum dikonfirmasi.</p></div></section>
 </Layout>
+
+<style>
+  .directory-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .illustration-note { margin-top: 28px; font-size: .9rem; line-height: 1.7; }
+  .facility-directory { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 32px; margin-top: 36px; }
+  .facility { min-width: 0; }
+  .facility img { aspect-ratio: 3 / 2; height: auto; }
+  .facility-copy { padding-top: 22px; }
+  .facility h3 { color: #172b3a; font-size: 1.45rem; font-weight: 700; letter-spacing: -.02em; }
+  .facility p { color: #465966; line-height: 1.75; margin-top: 12px; }
+  .facility .facility-detail { color: #5a6b77; font-size: .9rem; }
+  .facility .text-link { display: inline-block; margin-top: 16px; }
+  .everyday-section { align-items: center; }
+  .everyday-copy { margin: 22px 0; color: #465966; line-height: 1.75; }
+  figure { margin: 0; }
+  figure img { aspect-ratio: 5 / 4; height: auto; }
+  figcaption, .small-note { color: #5a6b77; font-size: .8rem; line-height: 1.65; margin-top: 14px; }
+  .closing-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  @media (max-width: 767px) { .directory-heading, .facility-directory { grid-template-columns: 1fr; gap: 28px; } .facility-directory { gap: 36px; } }
+</style>
