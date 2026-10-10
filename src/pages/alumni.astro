@@ -1,18 +1,48 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/shared/PageHero.astro";
-import BlobDivider from "../components/shared/BlobDivider.astro";
 import AlumniSection from "../components/alumni/AlumniSection";
+import { photo } from "../lib/photos";
+import { withBase } from "../lib/site";
 ---
 
-<Layout
-  title="Alumni & Testimoni - Kampung Cakap"
-  description="Cerita nyata alumni yang sudah lancar berbahasa Inggris bersama Kampung Cakap English Center."
->
-  <PageHero title={`Cerita Mereka yang Sudah "Cakap".`} />
-  <BlobDivider class="text-white -mt-1" />
+<Layout title="Alumni & Testimoni - Kampung Cakap" description="Contoh cerita pengalaman belajar bahasa Inggris bersama Kampung Cakap English Center. Cerita dan foto bersifat ilustratif, bukan testimoni terverifikasi.">
+  <PageHero title={`Cerita Mereka yang Sudah "Cakap".`} subtitle="Dari mencoba percakapan pertama sampai punya tujuan baru. Kenali ragam pengalaman belajar melalui cerita contoh dari draf program." image={photo("friends")} alt="Ilustrasi sekelompok teman dari Pexels, bukan foto alumni Kampung Cakap" />
 
-  <section class="mx-auto max-w-5xl px-4 py-16 md:px-8 md:py-20">
-    <AlumniSection client:visible />
+  <section class="section alumni-content">
+    <div class="container">
+      <div class="stories-opening"><div><h2 class="section-heading">Tujuan berbeda.<br />Semangat belajar yang sama.</h2><p class="section-intro">Pilih program untuk membaca gambaran perjalanan yang paling dekat dengan tujuanmu.</p></div><aside class="notice"><strong>Cerita contoh, bukan ulasan terverifikasi.</strong><p>Nama, kutipan, dan hasil dalam cerita berikut adalah contoh dari draf. Foto Pexels tidak menggambarkan tokoh tersebut. Tidak ada janji hasil, skor, beasiswa, atau pekerjaan.</p></aside></div>
+      <AlumniSection client:load />
+      <noscript><p class="notice no-js-note">Semua cerita ditampilkan. Aktifkan JavaScript untuk menggunakan filter program.</p></noscript>
+    </div>
   </section>
+
+  <section class="section section-soft"><div class="container alumni-next"><img class="photo" src={photo("graduation")} alt="Ilustrasi momen kelulusan, bukan alumni atau sertifikasi Kampung Cakap" width="1200" height="800" loading="lazy" /><div><h2 class="section-heading">Apa yang ingin kamu capai?</h2><p>Lebih berani berbicara, lebih aktif berdiskusi, atau persiapan TOEFL? Kenali programnya sebelum menentukan perjalananmu sendiri.</p><div class="next-actions"><a class="btn btn-primary" href={withBase("/program/")}>Temukan programmu</a><a class="text-link" href={withBase("/kontak/")}>Konsultasikan tujuan belajar</a></div><p class="photo-disclosure">Foto kelulusan dari Pexels adalah ilustrasi.</p></div></div></section>
 </Layout>
+
+<style>
+  .stories-opening { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; margin-bottom: 36px; align-items: start; }
+  .stories-opening .section-intro { margin-top: 18px; }
+  .stories-opening aside { font-size: .88rem; }
+  .stories-opening aside p { margin-top: 10px; }
+  .alumni-content :global(.alumni-filters) { display: flex; gap: 10px; flex-wrap: wrap; padding: 22px 0; border-top: 1px solid #dce5eb; border-bottom: 1px solid #dce5eb; }
+  .alumni-content :global(.alumni-filter) { min-height: 46px; padding: 10px 20px; border: 1px solid #dce5eb; border-radius: 999px; background: white; color: #07557c; font-weight: 600; font-size: .9rem; cursor: pointer; }
+  .alumni-content :global(.alumni-filter:hover) { background: #e8f5fc; }
+  .alumni-content :global(.alumni-filter[aria-pressed="true"]) { background: #07557c; border-color: #07557c; color: white; }
+  .alumni-content :global(.alumni-count) { font-size: .85rem; color: #5a6b77; margin: 26px 0; }
+  .alumni-content :global(.alumni-grid) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 42px 26px; }
+  .alumni-content :global(.alumni-story) { margin: 0; min-width: 0; }
+  .alumni-content :global(.alumni-story > img) { aspect-ratio: 4 / 3; }
+  .alumni-content :global(.alumni-story figcaption) { padding-top: 18px; }
+  .alumni-content :global(.alumni-story blockquote) { font-size: 1rem; line-height: 1.8; color: #172b3a; margin: 16px 0 20px; }
+  .alumni-content :global(.story-name) { font-size: .92rem; font-weight: 700; color: #172b3a; }
+  .alumni-content :global(.story-disclosure) { margin-top: 4px; font-size: .75rem; color: #5a6b77; }
+  .no-js-note { margin-top: 28px; }
+  .alumni-next { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .alumni-next img { aspect-ratio: 3 / 2; }
+  .alumni-next p { margin: 20px 0 26px; }
+  .next-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .alumni-next .photo-disclosure { font-size: .8rem; margin-bottom: 0; color: #5a6b77; }
+  @media (max-width: 1000px) { .alumni-content :global(.alumni-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 767px) { .stories-opening, .alumni-next { grid-template-columns: 1fr; gap: 26px; } .alumni-content :global(.alumni-grid) { grid-template-columns: 1fr; gap: 36px; } .alumni-content :global(.alumni-filter) { padding-inline: 16px; } }
+</style>

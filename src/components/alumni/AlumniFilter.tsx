@@ -7,18 +7,9 @@ interface Props {
 
 export default function AlumniFilter({ active, onChange }: Props) {
   return (
-    <div className="flex flex-wrap gap-2.5">
+    <div className="alumni-filters" role="group" aria-label="Filter cerita contoh berdasarkan program">
       {PROGRAMS.map((program) => (
-        <button
-          key={program}
-          type="button"
-          onClick={() => onChange(program)}
-          className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
-            active === program
-              ? "border-primary-600 bg-primary-600 text-white"
-              : "border-primary-200 bg-white text-primary-900 hover:border-primary-400"
-          }`}
-        >
+        <button key={program} type="button" onClick={() => onChange(program)} aria-pressed={active === program} aria-controls="alumni-stories" className="alumni-filter">
           {program}
         </button>
       ))}
