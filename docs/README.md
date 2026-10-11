@@ -1,6 +1,6 @@
 # Kampung Cakap English Center
 
-Situs kursus bahasa Inggris immersive dengan informasi program, English Area, asrama, biaya, intake, dan konsultasi WhatsApp. Implementasi statis memakai Astro 7.1.4, TypeScript, Tailwind CSS 4, dan React islands untuk interaksi. Identitas visual **Campus Life** memakai foto lokal, permukaan putih/biru langit, teks biru tua, dan aksi oranye.
+Situs kursus bahasa Inggris immersive dengan informasi program, English Area, asrama, biaya, intake, dan konsultasi WhatsApp. Implementasi statis memakai Astro 7.3.8, TypeScript, Tailwind CSS 4, dan React islands untuk interaksi. Identitas visual **Campus Life** memakai foto lokal, permukaan putih/biru langit, teks biru tua, dan aksi oranye.
 
 Dokumen umum proyek dikumpulkan di `docs/`. `AGENTS.md` dan entry point `CLAUDE.md` tetap di root; `PRODUCT.md` dan `DESIGN.md` juga tetap di root agar ditemukan oleh konteks Impeccable. Peta dokumen dan kondisi kapan AI harus membacanya tersedia di `AGENTS.md`.
 
@@ -70,7 +70,19 @@ Desktop memakai container maksimum 1280px dan navigasi dropdown; mobile memakai 
 
 Sebelum peluncuran nyata, pemilik wajib menyediakan nomor WhatsApp resmi, alamat kampus/pin peta yang tepat, kanal kontak/sosial yang disetujui, data legalitas (termasuk SK Diknas/NPSN jika akan ditampilkan), harga serta ketentuan pembayaran yang disahkan, dan persetujuan cerita/testimoni serta dokumentasi asli. Jangan mengganti ketiadaan data dengan angka/identitas rekaan. Pertahankan penjelasan DP minimal 50%, biaya asrama terpisah, asrama putra/putri terpisah, intake reguler 10/25, dan wisata opsional sesuai konteks produk.
 
-## Verifikasi yang tercatat
+## Keamanan dependency
+
+Perbaikan 11 Oktober 2026 memperbarui batas minimum Astro menjadi `^7.2.8`. Lockfile memasang Astro 7.3.8, devalue 5.9.4, js-yaml 4.3.2, sharp 0.35.5, svgo 4.1.0, nanoid 3.3.20, dan http-cache-semantics 4.3.0. Pembaruan tetap dalam rentang major yang kompatibel, tanpa `audit fix --force`, override dependency, atau dismissal alert.
+
+- Instalasi bersih `npm ci` berhasil; `npm audit --json` melaporkan **0 kerentanan** pada seluruh severity.
+- Build lokal dan build dengan `GITHUB_ACTIONS=true` sama-sama menghasilkan 11 halaman. Preview produksi diuji pada prefix `/kampung-cakap-english-center/`, termasuk tautan, foto, dan hydration React.
+- Smoke browser memverifikasi 11 rute produksi, menu mobile buka/Escape tutup, filter alumni Active, validasi form, serta pesan WhatsApp ber-URL-encoding dan fallback identik. `window.open` diintersep; tidak ada pesan nyata dikirim.
+- Codec native sharp berhasil mengubah AVIF menjadi WebP dengan dimensi 16 × 16. Tidak ada perubahan tampilan atau logic produk.
+- Satu request iframe Google Maps eksternal dibatalkan saat navigasi (`ERR_ABORTED`); verifikasi peta tetap mengikuti batas yang dicatat di bawah.
+
+Bukti smoke lokal berada di `.impeccable/review/dependency-security-smoke.json`. Gunakan `npm ci` untuk mereproduksi lockfile, lalu `npm audit` ketika memeriksa kerentanan terbaru.
+
+## Verifikasi redesign awal (10 Oktober 2026)
 
 Dokumentasi ini merangkum **observasi dari paket penyelesaian dan bukti integrasi**, bukan mengklaim menjalankan pemeriksaan baru pada saat penulisan:
 
